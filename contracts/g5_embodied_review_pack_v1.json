@@ -1,0 +1,44 @@
+{
+  "contract_id": "lumina.g5.embodied-review-pack.v1",
+  "work_item": "P5-06",
+  "status": "IN_PROGRESS_REVIEW_PREPARATION",
+  "owner": "PM/XR/Safety",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "evidence_dependencies": {
+    "P5-01": "lumina.embodied.action.acceptance.v1",
+    "P5-02": "lumina.spatial.navigation.acceptance.v1",
+    "P5-03": "lumina.motion.semantics.acceptance.v1",
+    "P5-04": "lumina.proxemics.acceptance.v1",
+    "P5-05": "lumina.presence.evaluation.acceptance.v1"
+  },
+  "review_state": {
+    "readiness_status": "READY_FOR_INDEPENDENT_REVIEW",
+    "decision": "HOLD",
+    "workflow_status": "IN_PROGRESS",
+    "completed": false,
+    "independent_approvals": 0,
+    "g5_pass_claim_count": 0
+  },
+  "acceptance": {
+    "evidence_bindings": 5,
+    "source_bindings": 30,
+    "acceptance_checks_percent_min": 100.0,
+    "known_missing_validation_count": 10,
+    "local_cancel_paths_min": 4,
+    "local_safe_state_paths_min": 5,
+    "human_presence_lift_claim_count": 0,
+    "false_green_controls_min": 48,
+    "false_green_rejection_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "independent_approvals": 0,
+    "g5_pass_claim_count": 0,
+    "decision": "HOLD"
+  },
+  "completion_policy": {
+    "formal_p5_06_completion_allowed": false,
+    "blocked_by": ["P4-08/G4 approval", "Godot live integration", "safe-idle visual QA", "human 20-percent lift study", "independent PM/XR/Safety signatures", "G5 decision"]
+  },
+  "non_claims": ["G5 PASS", "P5-06 Completed", "human presence lift", "Godot safe-idle visual QA", "independent approval"]
+}

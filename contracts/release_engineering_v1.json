@@ -1,0 +1,56 @@
+{
+  "contract_id": "lumina.release.engineering.v1",
+  "work_item": "P8-01",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "Runtime/Ops",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "host_install_required": false,
+  "production_signature_required": false,
+  "lifecycle": ["clean_install", "upgrade", "rollback"],
+  "bundle_requirements": [
+    "canonical manifest",
+    "path traversal rejection",
+    "per-file SHA-256",
+    "whole-bundle SHA-256",
+    "source revision binding",
+    "pre-upgrade rollback snapshot",
+    "fail-before-mutation validation"
+  ],
+  "dependencies": {
+    "g7_status": "NOT_APPROVED",
+    "g8_status": "NOT_APPROVED"
+  },
+  "acceptance": {
+    "deploy_trials_min": 200,
+    "deploy_success_percent_min": 99.0,
+    "rollback_success_percent_min": 100.0,
+    "tamper_rejection_percent_min": 100.0,
+    "trace_completeness_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "host_install_writes_max": 0,
+    "network_transmissions_max": 0,
+    "external_deployments_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "G7 independent approval",
+      "production signing authority",
+      "fresh-host clean install",
+      "real upgrade/rollback rehearsal",
+      "G8 independent approval"
+    ]
+  },
+  "non_claims": [
+    "production release",
+    "signed release",
+    "fresh-host deployment",
+    "G7 approval",
+    "G8 approval",
+    "formal WBS promotion"
+  ]
+}

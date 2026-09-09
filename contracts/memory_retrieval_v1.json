@@ -1,0 +1,18 @@
+{
+  "contract_id": "lumina.memory.retrieval.v1",
+  "status": "ACTIVE_LOCAL",
+  "local_only": true,
+  "scope": "exact tenant_id and user_id",
+  "eligible_status": "active",
+  "minimum_confidence": 0.5,
+  "conflict_action": "quarantine every active value for a conflicted key",
+  "expired_action": "exclude",
+  "unsupported_action": "return no result and set unsupported=true",
+  "grounding_required": ["memory_id", "source_id", "correlation_id"],
+  "acceptance": {
+    "precision_at_5_min": 0.8,
+    "cross_user_leakage_max": 0,
+    "unsupported_empty_accuracy": 1.0,
+    "gate_claim": "NONE"
+  }
+}

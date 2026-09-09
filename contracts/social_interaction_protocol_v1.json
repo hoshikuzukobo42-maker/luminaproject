@@ -1,0 +1,107 @@
+{
+  "contract_id": "lumina.social.interaction.protocol.v1",
+  "work_item": "P6-02",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "production_sqlite_required": false,
+  "godot_required": false,
+  "live_social_action_required": false,
+  "schemas": {
+    "event": "lumina.social.event.v1",
+    "decision": "lumina.social.decision.v1",
+    "state": "lumina.social.state.v1",
+    "fixture": "lumina.social.fixture.v1",
+    "evaluation": "lumina.social.evaluation.v1"
+  },
+  "dependencies": {
+    "p6_01_identity_model": "lumina_next/multi_user_identity_v1.py",
+    "identity_token_audience": "action_authorization",
+    "identity_token_operation": "action:evaluate_self",
+    "p4_08_status": "NOT_APPROVED",
+    "g6_status": "NOT_APPROVED"
+  },
+  "event_types": [
+    "JOIN",
+    "SPEAK",
+    "WAIT",
+    "CONSENT",
+    "INTERRUPT",
+    "YIELD",
+    "LEAVE",
+    "REJOIN"
+  ],
+  "turn_policy": {
+    "speak": "only when no active speaker and queue order permits",
+    "wait": "unique FIFO entry for a present non-speaker",
+    "interrupt": "requires one-time consent bound to current speaker, grantee, and turn sequence",
+    "yield": "transfers to the first present queued participant",
+    "leave": "removes queue and consent state and transfers an active turn safely",
+    "rejoin": "allowed only from LEFT and grants no automatic turn"
+  },
+  "identity_binding": [
+    "room_id",
+    "tenant_id",
+    "user_id",
+    "session_id",
+    "registered role and permissions",
+    "registered memory and world-state scopes",
+    "P6-01 token_id and context_sha256",
+    "provenance source/correlation/time/authentication method"
+  ],
+  "privacy_policy": {
+    "accepted_speech_plaintext_retained": false,
+    "speech_content_sha256_only": true,
+    "foreign_marker_leakage_allowed": 0
+  },
+  "fail_closed": {
+    "identity_token_tamper": "REJECT",
+    "identity_token_replay": "REJECT",
+    "identity_token_expiry": "REJECT",
+    "cross_user_or_impersonation": "REJECT",
+    "cross_tenant_or_session": "REJECT",
+    "provenance_swap": "REJECT",
+    "out_of_turn_speech": "REJECT",
+    "interrupt_without_current_bound_consent": "REJECT",
+    "invalid_leave_or_rejoin": "REJECT",
+    "unknown_or_duplicate_event": "REJECT"
+  },
+  "acceptance": {
+    "scenario_count_min": 100,
+    "turn_taking_success_percent_min": 90.0,
+    "scenario_success_percent_min": 90.0,
+    "cross_user_rejection_percent_min": 100.0,
+    "cross_user_authorized_count_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "unauthorized_interaction_count_max": 0,
+    "provenance_completeness_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "external_social_actions_executed_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "P4-08 approval",
+      "G6 approval",
+      "Godot integration",
+      "live social action validation",
+      "human social evaluation"
+    ]
+  },
+  "non_claims": [
+    "P4-08 approval",
+    "G6 approval",
+    "formal WBS promotion",
+    "Godot integration",
+    "live speech delivery",
+    "live social action",
+    "human social evaluation",
+    "production authentication"
+  ]
+}

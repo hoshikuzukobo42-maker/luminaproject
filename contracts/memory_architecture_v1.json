@@ -1,0 +1,103 @@
+{
+  "contract_id": "lumina.memory.architecture.v1",
+  "status": "ACCEPTED_FOR_LOCAL_IMPLEMENTATION",
+  "decision": "separate working, episodic, semantic, and profile memory by purpose, retention, consent, and correction policy",
+  "local_only": true,
+  "identity_boundary": {
+    "policy": "Lumina identity/persona invariants are not user memory and cannot be changed by memory ingestion or sleep",
+    "implementation": "lumina_next.memory_sleep identity quarantine"
+  },
+  "common_invariants": [
+    "tenant_and_user_scope_required",
+    "provenance_required",
+    "confidence_bounded_0_to_1",
+    "explicit_user_correction_outranks_inference",
+    "stale_or_conflicting_values_are_not_silently_active",
+    "forget_propagates_to_active_indexes_and_caches",
+    "audit_records_do_not_retain_forgotten_plaintext",
+    "all_writes_are_local_only"
+  ],
+  "layers": [
+    {
+      "name": "working",
+      "purpose": "short-lived current-turn observations and context",
+      "save_conditions": ["validated_current_session_source", "needed_for_active_turn_or_task"],
+      "ttl": {"mode": "elapsed", "seconds": 900, "hard_max_items": 32},
+      "forgetting": {"trigger": ["ttl_expired", "session_closed", "explicit_forget"], "action": "remove_from_active_context_and_cache"},
+      "correction": {"action": "replace_active_value_immediately", "retain_plaintext_history": false},
+      "retrieval": {"scope": "current_user_current_session", "requires_grounding": true},
+      "consent": {"mode": "session_processing", "persistent_write": false},
+      "provenance": {"required": ["source_id", "observed_at", "correlation_id"]},
+      "conflict": {"action": "prefer_newer_validated_fact_else_quarantine"},
+      "current_runtime_crosswalk": ["lumina_next.memory_sleep working", "bounded in-process context"]
+    },
+    {
+      "name": "episodic",
+      "purpose": "dated summaries of user-visible events",
+      "save_conditions": ["explicit_save_or_policy_approved_salience", "user_scope_known", "sensitive_data_filter_pass"],
+      "ttl": {"mode": "elapsed", "seconds": 2592000, "hard_max_items": 256},
+      "forgetting": {"trigger": ["ttl_expired", "explicit_forget", "consent_revoked"], "action": "delete_active_record_index_and_embedding_then_emit_non_plaintext_tombstone"},
+      "correction": {"action": "supersede_old_record_and_rebuild_derived_index", "retain_plaintext_history": false},
+      "retrieval": {"scope": "same_user_only", "requires_grounding": true},
+      "consent": {"mode": "explicit_or_visible_policy", "persistent_write": true},
+      "provenance": {"required": ["source_id", "occurred_at", "correlation_id", "policy_id"]},
+      "conflict": {"action": "keep_both_events_if_nonexclusive_else_quarantine"},
+      "current_runtime_crosswalk": ["lumina_next.memory_sleep episodic", "lumina_next.sqlite_memory episodic_memories"]
+    },
+    {
+      "name": "semantic",
+      "purpose": "stable user-confirmed facts, preferences, and rules",
+      "save_conditions": ["explicit_user_statement_or_confirmed_correction", "stable_key_present", "sensitive_data_filter_pass"],
+      "ttl": {"mode": "review", "seconds": 15552000, "hard_max_items": 1024},
+      "forgetting": {"trigger": ["explicit_forget", "consent_revoked", "superseded"], "action": "delete_active_record_index_and_embedding_then_emit_non_plaintext_tombstone"},
+      "correction": {"action": "explicit_correction_supersedes_old_key_value_and_rebuilds_index", "retain_plaintext_history": false},
+      "retrieval": {"scope": "same_user_only", "requires_grounding": true},
+      "consent": {"mode": "explicit_for_sensitive_or_durable_fact", "persistent_write": true},
+      "provenance": {"required": ["source_id", "occurred_at", "correlation_id", "confirmation_state"]},
+      "conflict": {"action": "quarantine_candidate_until_explicit_correction_or_review"},
+      "current_runtime_crosswalk": ["lumina_next.memory_sleep semantic", "semantic retrieval requested on demand"]
+    },
+    {
+      "name": "profile",
+      "purpose": "user-controlled durable preferences and pinned personal settings",
+      "save_conditions": ["explicit_opt_in", "stable_key_present", "user_scope_known", "sensitive_data_filter_pass"],
+      "ttl": {"mode": "review", "seconds": 31536000, "hard_max_items": 512},
+      "forgetting": {"trigger": ["explicit_forget", "consent_revoked", "account_scope_deleted"], "action": "delete_active_record_index_and_embedding_then_emit_non_plaintext_tombstone"},
+      "correction": {"action": "explicit_correction_supersedes_old_key_value_and_rebuilds_index", "retain_plaintext_history": false},
+      "retrieval": {"scope": "same_user_only", "requires_grounding": true},
+      "consent": {"mode": "explicit_opt_in_and_revocable", "persistent_write": true},
+      "provenance": {"required": ["source_id", "created_at", "correlation_id", "consent_receipt_id"]},
+      "conflict": {"action": "explicit_user_value_wins_else_quarantine"},
+      "current_runtime_crosswalk": ["lumina_next.sqlite_memory profile_facts", "profile pin and forget APIs"]
+    }
+  ],
+  "correction_precedence": [
+    "explicit_current_user_correction",
+    "explicit_current_user_confirmation",
+    "validated_direct_observation",
+    "prior_confirmed_memory",
+    "inference"
+  ],
+  "write_transaction": [
+    "authorize_scope_and_consent",
+    "validate_and_classify_layer",
+    "evaluate_conflict_and_staleness",
+    "write_versioned_record_and_non_plaintext_audit",
+    "refresh_derived_indexes",
+    "verify_read_after_write_or_rollback"
+  ],
+  "forget_transaction": [
+    "authorize_same_user_request",
+    "mark_target_unavailable",
+    "delete_active_record_embedding_and_cache",
+    "emit_non_plaintext_tombstone",
+    "verify_no_active_retrieval",
+    "report_completion_or_fail_closed"
+  ],
+  "acceptance": {
+    "required_layers": ["working", "episodic", "semantic", "profile"],
+    "required_policy_fields": ["save_conditions", "ttl", "forgetting", "correction", "retrieval", "consent", "provenance", "conflict"],
+    "policy_coverage_percent": 100,
+    "gate_claim": "NONE"
+  }
+}

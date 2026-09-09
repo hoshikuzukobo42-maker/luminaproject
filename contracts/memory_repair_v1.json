@@ -1,0 +1,119 @@
+{
+  "contract_id": "lumina.memory.repair.v1",
+  "work_item": "P3-05",
+  "status": "ACTIVE_LOCAL",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "paid_api_required": false,
+  "state_schema_version": "lumina.memory.repair.state.v1",
+  "request_schema_version": "lumina.memory.repair.request.v1",
+  "consent_schema_version": "lumina.memory.repair.consent.v1",
+  "result_schema_version": "lumina.memory.repair.result.v1",
+  "policy_version": "lumina.memory.repair.policy.v1",
+  "depends_on": {
+    "memory_architecture": "contracts/memory_architecture_v1.json",
+    "retrieval_implementation": "lumina_next/memory_retrieval_v1.py",
+    "relationship_implementation": "lumina_next/relationship_model_v1.py"
+  },
+  "active_projections": [
+    "working",
+    "episodic",
+    "semantic",
+    "profile",
+    "relationship",
+    "retrieval"
+  ],
+  "scope_policy": {
+    "state": "one exact tenant_id and user_id",
+    "request": "must exactly match state tenant_id and user_id",
+    "record_history_and_receipt": "must exactly match state tenant_id and user_id",
+    "cross_user_fallback": "forbidden",
+    "scope_mismatch": "reject before output"
+  },
+  "correction_policy": {
+    "authorization": "explicit_user_correction provenance",
+    "target": "one active lineage",
+    "transaction": [
+      "verify sealed current state and request revision",
+      "remove every old lineage record from every active projection",
+      "write a deterministic replacement in every projection where the lineage existed",
+      "emit non-plaintext supersession audit",
+      "seal and verify returned state"
+    ],
+    "old_plaintext_retained": false,
+    "old_record_may_remain_active": false,
+    "tombstone_emitted": false
+  },
+  "forget_policy": {
+    "authorization": "explicit bound ALLOW consent receipt required",
+    "receipt_bindings": [
+      "receipt_id",
+      "request_id",
+      "tenant_id",
+      "user_id",
+      "lineage_id",
+      "forget_lineage scope",
+      "validity window",
+      "correlation_id",
+      "receipt_sha256"
+    ],
+    "transaction": [
+      "verify sealed current state request and consent",
+      "remove target lineage from all six active projections",
+      "emit non-plaintext lineage tombstone",
+      "emit provenance-bearing non-plaintext audit",
+      "verify no active projection contains the lineage",
+      "seal returned state or fail closed"
+    ],
+    "propagation_percent_required": 100.0,
+    "same_lineage_reappearance_max": 0,
+    "tombstone_plaintext_retained": false
+  },
+  "audit_policy": {
+    "required_scope": ["tenant_id", "user_id", "lineage_id"],
+    "required_provenance": [
+      "source_id",
+      "correlation_id",
+      "observed_at",
+      "confirmation_state"
+    ],
+    "integrity": "canonical SHA-256 for state, request, consent, audit, tombstone, and result",
+    "plaintext_retained": false
+  },
+  "replay_policy": {
+    "ordering": "projection policy order then record_id ascending",
+    "same_start_state_and_request": "byte-equivalent canonical result",
+    "already_applied_request": "reject duplicate",
+    "tombstoned_lineage": "reject reappearance and subsequent repair"
+  },
+  "fail_closed": {
+    "tampered_state_request_receipt_audit_tombstone_or_result": "REJECT",
+    "stale_revision_hash_or_request_time": "REJECT",
+    "duplicate_record_lineage_request_audit_or_tombstone": "REJECT",
+    "missing_expired_or_misbound_forget_consent": "REJECT",
+    "cross_user_or_cross_tenant_data": "REJECT_BEFORE_OUTPUT",
+    "missing_or_tombstoned_lineage": "REJECT",
+    "noncanonical_json": "REJECT"
+  },
+  "acceptance": {
+    "minimum_correction_cases": 6,
+    "minimum_forget_cases": 6,
+    "correction_supersession_percent_min": 100.0,
+    "forget_projection_propagation_percent_min": 100.0,
+    "same_lineage_reappearance_count_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "deterministic_replay_percent_min": 100.0,
+    "audit_provenance_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "gate_claim": "NONE"
+  },
+  "non_claims": [
+    "P3-02 live consent UI integration",
+    "production SQLite integration",
+    "G3 approval",
+    "human evaluation",
+    "live runtime integration"
+  ]
+}

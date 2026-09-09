@@ -1,0 +1,94 @@
+{
+  "contract_id": "lumina.g6-independent-review-pack.v1",
+  "work_item": "P6-05",
+  "status": "IN_PROGRESS_REVIEW_PREPARATION",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "godot_required": false,
+  "live_integration_required": false,
+  "schemas": {
+    "fixture": "lumina.g6-independent-review.fixture.v1",
+    "review_pack": "lumina.g6-independent-review.pack.v1"
+  },
+  "evidence_dependencies": {
+    "P6-01": "lumina.identity.acceptance.v1",
+    "P6-02": "lumina.social.acceptance.v1",
+    "P6-03": "lumina.role-pack.acceptance.v1",
+    "P6-04": "lumina.community-safety.acceptance.v1"
+  },
+  "binding_policy": [
+    "exact acceptance-evidence byte SHA-256",
+    "exact evidence schema and P6 work-item identity",
+    "all six source SHA-256 bindings per P6 item re-hashed from current repository",
+    "P6-01 identity acceptance including at least 1000 cross-user attacks",
+    "P6-02 social turn-taking acceptance at or above 90 percent",
+    "P6-03 role-boundary acceptance at 100 percent",
+    "P6-04 critical safety detection and containment at 100 percent",
+    "aggregate cross-user leakage, unauthorized action, and external action all zero",
+    "human, live, and Godot validation gaps remain explicitly MISSING"
+  ],
+  "review_state": {
+    "readiness_status": "READY_FOR_INDEPENDENT_REVIEW",
+    "decision": "HOLD",
+    "workflow_status": "IN_PROGRESS",
+    "completed": false,
+    "independent_approvals": 0,
+    "independent_signatures": 0,
+    "g6_pass_claim_count": 0
+  },
+  "dependency_status": {
+    "P4-08": "NOT_APPROVED",
+    "G4": "NOT_APPROVED",
+    "G5": "NOT_APPROVED",
+    "G6": "NOT_APPROVED"
+  },
+  "fail_closed": {
+    "missing_or_duplicate_evidence": "REJECT",
+    "evidence_or_source_hash_mismatch": "REJECT",
+    "acceptance_metric_regression": "REJECT",
+    "nonzero_leakage_unauthorized_or_external_action": "REJECT",
+    "self_review_or_invented_signature": "REJECT",
+    "independent_approval_without_signature": "REJECT",
+    "P4-08_G4_G5_G6_overclaim": "REJECT",
+    "human_live_or_Godot_false_green": "REJECT",
+    "formal_completion_or_G6_PASS_claim": "REJECT"
+  },
+  "acceptance": {
+    "evidence_bindings": 4,
+    "source_bindings": 24,
+    "acceptance_checks_percent_min": 100.0,
+    "cross_user_leakage_count_max": 0,
+    "unauthorized_count_max": 0,
+    "external_action_count_max": 0,
+    "known_missing_validation_count": 12,
+    "false_green_controls_min": 24,
+    "false_green_rejection_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "independent_approvals": 0,
+    "g6_pass_claim_count": 0,
+    "decision": "HOLD"
+  },
+  "completion_policy": {
+    "formal_p6_05_completion_allowed": false,
+    "blocked_by": ["independent reviewer signature", "P4-08 approval", "G4 approval", "G5 approval", "G6 decision"]
+  },
+  "p7_04": {
+    "quality_triage_preparation_allowed": true,
+    "formal_execution_status": "NOT_STARTED",
+    "must_not_convert_G6_HOLD_to_PASS": true
+  },
+  "non_claims": [
+    "G6 PASS",
+    "P6-05 Completed",
+    "independent approval or signature",
+    "P4-08 approval",
+    "G4 approval",
+    "G5 approval",
+    "human validation",
+    "live integration",
+    "Godot integration"
+  ]
+}

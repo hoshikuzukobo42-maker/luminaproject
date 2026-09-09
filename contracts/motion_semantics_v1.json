@@ -1,0 +1,76 @@
+{
+  "schema_version": "lumina.motion.semantics.contract.v1",
+  "work_item": "P5-03",
+  "library_version": "lumina.motion.semantics.v1",
+  "request_schema": "lumina.motion.semantic.request.v1",
+  "motion_contract_schema": "lumina.motion.semantic.contract.v1",
+  "result_schema": "lumina.motion.semantic.result.v1",
+  "semantic_mappings": {
+    "walk": {"postures": ["standing"], "result_posture": "standing", "clip": "locomotion.walk.v1", "interface": "P5_02_SPATIAL_NAVIGATION", "downstream_intent": "approach"},
+    "point": {"postures": ["standing", "seated"], "result_posture": "UNCHANGED", "clip": "upper_body.point.v1", "interface": "P5_01_EMBODIED_ACTION", "downstream_intent": "point"},
+    "sit_down": {"postures": ["standing"], "result_posture": "seated", "clip": "posture.sit_down.v1", "interface": "P5_01_EMBODIED_ACTION", "downstream_intent": "sit"},
+    "sit_idle": {"postures": ["seated"], "result_posture": "seated", "clip": "posture.sit_idle.v1", "interface": "ANIMATION_ONLY_REFERENCE", "downstream_intent": null},
+    "stand_up": {"postures": ["seated"], "result_posture": "standing", "clip": "posture.stand_up.v1", "interface": "P5_01_EMBODIED_ACTION", "downstream_intent": "stand"},
+    "look": {"postures": ["standing", "seated"], "result_posture": "UNCHANGED", "clip": "gaze.look.v1", "interface": "P5_01_EMBODIED_ACTION", "downstream_intent": "look"},
+    "gesture": {"postures": ["standing", "seated"], "result_posture": "UNCHANGED", "clip": "upper_body.gesture.v1", "interface": "P5_01_EMBODIED_ACTION", "downstream_intent": "gesture"},
+    "approach": {"postures": ["standing"], "result_posture": "standing", "clip": "locomotion.approach.v1", "interface": "P5_02_SPATIAL_NAVIGATION", "downstream_intent": "approach"}
+  },
+  "preconditions": {
+    "world_state_v1_freshness_required": true,
+    "tenant_and_user_binding_required": true,
+    "posture_transition_fail_closed": true,
+    "target_binding_required_when_semantic_requires_target": true,
+    "kill_switch_disengaged_and_privacy_safe_required": true,
+    "incompatible_command": "BLOCK"
+  },
+  "integration": {
+    "P5_01_EMBODIED_ACTION": "lumina_next.embodied_action_api_v1.EmbodiedActionService",
+    "P5_02_SPATIAL_NAVIGATION": "lumina_next.spatial_navigation_v1.SpatialNavigationService",
+    "animation_adapter": "LocalFakeAnimationAdapter",
+    "world_state_sha_binding_required": true,
+    "correlation_binding_required": true,
+    "only_exact_local_fake_types": true
+  },
+  "lifecycle": {
+    "idempotency_scope": ["tenant_id", "user_id", "idempotency_key"],
+    "cancel_before_mapping": true,
+    "pending_cancel": true,
+    "deadline_timeout": true,
+    "failure_timeout_rollback": true,
+    "duplicate_side_effect_suppression": true
+  },
+  "trace_stages": [
+    "VALIDATE",
+    "IDEMPOTENCY",
+    "PRECONDITION",
+    "SEMANTIC_MAP",
+    "RISK_PERMISSION",
+    "DOWNSTREAM_DISPATCH",
+    "ANIMATION",
+    "ROLLBACK",
+    "RESULT"
+  ],
+  "acceptance": {
+    "golden_traces_min": 100,
+    "semantic_match_percent_min": 95.0,
+    "critical_unsafe_execution_max": 0,
+    "cross_user_leakage_max": 0,
+    "duplicate_side_effect_max": 0,
+    "deterministic_replay_percent_min": 100.0,
+    "trace_correlation_complete_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0
+  },
+  "isolation": {
+    "g5_approved": false,
+    "godot_live_action": false,
+    "external_execution": false,
+    "network_used": false,
+    "dotnet_or_mono_used": false,
+    "paid_api_used": false
+  },
+  "promotion": {
+    "local_reference_candidate": true,
+    "formal_wbs_promotion": "HOLD_DEPENDENCY_GATE",
+    "remaining_conditions": ["G5 approval", "approved animation authority", "Godot/live integration and safety validation"]
+  }
+}

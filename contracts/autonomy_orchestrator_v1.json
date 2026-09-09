@@ -1,0 +1,40 @@
+{
+  "contract_id": "lumina.autonomy.orchestrator.v1",
+  "work_item": "P4-01",
+  "status": "ACTIVE",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "input_schema_version": "lumina.autonomy.input.v1",
+  "trace_schema_version": "lumina.autonomy.trace.v1",
+  "ordered_stages": ["observe", "interpret", "goal", "plan", "act", "reflect"],
+  "correlation_policy": "one canonical correlation_id across all six stages",
+  "execution_modes": {
+    "observe_only": "never invoke an action adapter",
+    "dry_run": "return proposed local actions without invoking an adapter",
+    "execute_local": "requires an ALLOW receipt scoped to local_no_side_effect and an explicit adapter"
+  },
+  "fail_closed": {
+    "unknown_schema_or_fields": "REJECT",
+    "unsafe_world_state": "SAFE_IDLE_GOAL",
+    "missing_or_invalid_permission": "BLOCK_ACT",
+    "nonlocal_effect": "BLOCK_ACT_UNTIL_P4_03",
+    "missing_action_adapter": "BLOCK_ACT",
+    "trace_gap_or_reorder": "REJECT_TRACE",
+    "trace_or_output_tamper": "REJECT_TRACE",
+    "duplicate_batch_correlation": "REJECT_BATCH"
+  },
+  "acceptance": {
+    "loop_trace_completeness_percent_min": 100.0,
+    "correlation_propagation_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "unsafe_action_execution_max": 0,
+    "minimum_golden_cases": 12
+  },
+  "dependencies": ["P2-05", "P3-04"],
+  "gate_target": "G4",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE",
+  "live_integration_claim": "NONE"
+}

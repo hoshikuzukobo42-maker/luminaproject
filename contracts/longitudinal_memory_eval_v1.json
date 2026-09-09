@@ -1,0 +1,84 @@
+{
+  "contract_id": "lumina.memory.longitudinal.evaluation.v1",
+  "work_item": "P3-06",
+  "status": "ACTIVE_LOCAL_SIMULATION",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "production_sqlite_required": false,
+  "fixture_schema_version": "lumina.memory.longitudinal.fixture.v1",
+  "evaluation_schema_version": "lumina.memory.longitudinal.evaluation.v1",
+  "policy_version": "lumina.memory.longitudinal.policy.v1",
+  "depends_on": {
+    "p3_01_memory_architecture": "contracts/memory_architecture_v1.json",
+    "p3_02_consent_reference": "lumina_next/memory_consent_v1.py",
+    "p3_03_retrieval": "lumina_next/memory_retrieval_v1.py",
+    "p3_04_relationship": "lumina_next/relationship_model_v1.py",
+    "p3_05_repair": "lumina_next/memory_repair_v1.py"
+  },
+  "time_policy": {
+    "mode": "deterministic_simulated_time",
+    "duration_seconds": 604800,
+    "simulated_days": 7,
+    "minimum_sessions_per_day": 2,
+    "wall_clock_wait": false,
+    "human_elapsed_time_claim": "NONE"
+  },
+  "retention_categories": [
+    "preference",
+    "promise",
+    "boundary",
+    "correction",
+    "deletion",
+    "relationship_change"
+  ],
+  "evaluation_policy": {
+    "preference": "current exact-user preference remains grounded across sessions",
+    "promise": "open and later fulfilled status remain grounded",
+    "boundary": "confirmed boundary remains enforced",
+    "correction": "explicit correction replaces old value in relationship and retrieval projections",
+    "deletion": "bound-consent forget removes lineage from all projections and later sessions",
+    "relationship_change": "confirmed relationship change remains grounded",
+    "provenance": "every present fact or deletion tombstone carries source and correlation",
+    "cross_user": "foreign events and markers never appear",
+    "replay": "fixture order does not affect canonical evaluation SHA-256"
+  },
+  "fail_closed": {
+    "fixture_not_exactly_seven_days": "REJECT",
+    "fewer_than_two_sessions_on_any_day": "REJECT",
+    "non_simulated_time_mode": "REJECT",
+    "missing_dependency_or_provenance": "FAIL_EVALUATION",
+    "forgotten_or_superseded_reappearance": "FAIL_EVALUATION",
+    "cross_user_leakage": "FAIL_EVALUATION",
+    "tampered_evaluation": "REJECT",
+    "G3_or_human_overclaim": "REJECT"
+  },
+  "acceptance": {
+    "simulated_days_required": 7,
+    "minimum_sessions": 14,
+    "retention_percent_min": 100.0,
+    "each_category_retention_percent_min": 100.0,
+    "provenance_coverage_percent_min": 100.0,
+    "cross_user_leakage_count_max": 0,
+    "forgotten_reappearance_count_max": 0,
+    "superseded_reappearance_count_max": 0,
+    "deterministic_replay_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "pass_meaning": "eligible for the next local mechanical WBS stage only",
+    "g3_approval": false,
+    "human_seven_day_evaluation": false,
+    "production_sqlite_integration": false,
+    "live_runtime_integration": false
+  },
+  "non_claims": [
+    "actual seven-day human evaluation",
+    "G3 approval",
+    "production SQLite integration",
+    "production user-data evaluation",
+    "live runtime integration"
+  ]
+}

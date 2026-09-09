@@ -1,0 +1,71 @@
+{
+  "contract_id": "lumina.longitudinal.beta.eval.v1",
+  "work_item": "P7-03",
+  "status": "ACTIVE_SYNTHETIC_REFERENCE",
+  "owner": "UX/QA",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "production_user_data_required": false,
+  "godot_required": false,
+  "protocol": {
+    "synthetic_participants": 24,
+    "simulated_duration_days": 30,
+    "sessions_per_participant": 8,
+    "session_days": [0, 3, 7, 10, 14, 21, 28, 30],
+    "strata": ["accessibility", "new_user", "returning_user"],
+    "trust_scale": {"min": 1, "max": 5},
+    "discomfort_categories": [
+      "autonomy_surprise",
+      "boundary_mismatch",
+      "memory_confusion",
+      "motion_discomfort",
+      "privacy_concern",
+      "response_delay"
+    ]
+  },
+  "dependencies": {
+    "p7_01": "LOCAL_MECHANICAL_CANDIDATE",
+    "p7_02": "LOCAL_MECHANICAL_CANDIDATE",
+    "g6_status": "NOT_APPROVED",
+    "g7_status": "NOT_APPROVED"
+  },
+  "acceptance": {
+    "scheduled_sessions_min": 192,
+    "discomfort_category_coverage_percent_min": 100.0,
+    "cross_user_rejection_percent_min": 100.0,
+    "provenance_completeness_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "critical_issues_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "actual_human_participants_max": 0,
+    "actual_human_sessions_max": 0,
+    "human_consent_records_max": 0,
+    "production_user_records_read_max": 0,
+    "external_contacts_executed_max": 0,
+    "real_d30_retention_claim": "NONE",
+    "real_trust_score_claim": "NONE",
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "synthetic_pipeline_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "G6 independent approval",
+      "P7-01/P7-02 accountable approval",
+      "actual multi-week human beta",
+      "human research analysis",
+      "G7 independent approval"
+    ]
+  },
+  "non_claims": [
+    "real D30 retention",
+    "real trust score",
+    "product value",
+    "actual longitudinal beta",
+    "human research",
+    "G6 approval",
+    "G7 approval",
+    "formal WBS promotion"
+  ]
+}

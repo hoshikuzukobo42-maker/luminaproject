@@ -1,0 +1,100 @@
+{
+  "contract_id": "lumina.role-packs.v1",
+  "work_item": "P6-03",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "godot_required": false,
+  "live_action_required": false,
+  "dependencies": {
+    "p6_01_identity": "lumina_next/multi_user_identity_v1.py",
+    "p6_02_social_protocol": "lumina_next/social_interaction_protocol_v1.py",
+    "g6_status": "NOT_APPROVED"
+  },
+  "schemas": {
+    "request": "lumina.role-pack.request.v1",
+    "decision": "lumina.role-pack.decision.v1",
+    "fixture": "lumina.role-pack.fixture.v1",
+    "evaluation": "lumina.role-pack.evaluation.v1"
+  },
+  "packs": {
+    "visitor_guidance": {
+      "title": "来訪案内",
+      "allowed_identity_roles": ["owner", "member"],
+      "required_permissions": ["action:evaluate_self", "world:read_self"],
+      "allowed_intents": ["explain_exhibit", "provide_directions", "queue_assistance"],
+      "forbidden_intents": ["collect_sensitive_data", "external_contact", "financial_advice", "medical_advice"],
+      "handoff_triggers": ["accessibility_assistance", "emergency", "lost_person", "out_of_scope"],
+      "handoff_target": "on_site_human_guide",
+      "exit_triggers": ["task_complete", "user_exit", "visitor_departed"]
+    },
+    "consultation": {
+      "title": "相談",
+      "allowed_identity_roles": ["owner", "member"],
+      "required_permissions": ["action:evaluate_self", "memory:read_self"],
+      "allowed_intents": ["clarify_request", "record_user_decision", "summarize_options"],
+      "forbidden_intents": ["coerce_decision", "financial_transaction", "legal_determination", "medical_diagnosis"],
+      "handoff_triggers": ["crisis", "low_confidence", "out_of_scope", "regulated_advice"],
+      "handoff_target": "qualified_human_advisor",
+      "exit_triggers": ["consultation_complete", "user_exit", "user_withdrew"]
+    },
+    "collaboration": {
+      "title": "共同作業",
+      "allowed_identity_roles": ["owner"],
+      "required_permissions": ["action:evaluate_self", "memory:read_self", "world:read_self"],
+      "allowed_intents": ["edit_local_draft", "propose_task", "review_progress"],
+      "forbidden_intents": ["credential_access", "delete_without_consent", "external_publish", "impersonate_user"],
+      "handoff_triggers": ["conflict", "external_effect", "out_of_scope", "permission_escalation"],
+      "handoff_target": "human_collaboration_owner",
+      "exit_triggers": ["collaboration_complete", "session_closed", "user_exit"]
+    }
+  },
+  "binding_policy": [
+    "exact role_pack_id",
+    "P6-01 one-time identity token",
+    "tenant/user/session/role/permissions/memory/world-state",
+    "P6-02 present participant and current speaker",
+    "exact provenance source/correlation/time/authentication method",
+    "payload hash without plaintext retention"
+  ],
+  "fail_closed": {
+    "token_tamper_replay_expiry": "REJECT",
+    "cross_user_tenant_session_or_provenance": "REJECT",
+    "forbidden_or_unknown_intent": "REJECT",
+    "missing_permission_or_disallowed_identity_role": "REJECT",
+    "non_speaker_request": "REJECT",
+    "invalid_handoff_or_exit_trigger": "REJECT",
+    "post_exit_request": "REJECT",
+    "external_effect_request": "REJECT"
+  },
+  "acceptance": {
+    "pack_count": 3,
+    "scenarios_per_pack_min": 40,
+    "role_boundary_pass_percent_min": 100.0,
+    "cross_user_rejection_percent_min": 100.0,
+    "cross_user_authorized_count_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "unauthorized_role_action_count_max": 0,
+    "external_actions_executed_max": 0,
+    "provenance_completeness_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": ["G6 approval", "Godot integration", "live role action validation", "human role evaluation"]
+  },
+  "non_claims": [
+    "G6 approval",
+    "formal WBS promotion",
+    "Godot integration",
+    "live role action",
+    "live handoff execution",
+    "human role evaluation"
+  ]
+}

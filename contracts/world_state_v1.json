@@ -1,0 +1,61 @@
+{
+  "contract_id": "lumina.world.state.v1",
+  "status": "ACTIVE",
+  "owner": "Runtime Platform",
+  "local_only": true,
+  "snapshot_schema_version": "lumina.world.state.snapshot.v1",
+  "event_schema_version": "lumina.world.state.event.v1",
+  "compatibility": {
+    "version_policy": "exact_match_fail_closed",
+    "unknown_version_action": "REJECT",
+    "future_clock_skew_seconds": 2,
+    "default_stale_after_seconds": 10
+  },
+  "snapshot_required_fields": [
+    "schema_version",
+    "tenant_id",
+    "world_id",
+    "snapshot_id",
+    "source_id",
+    "observed_at",
+    "freshness",
+    "users",
+    "objects",
+    "event_refs",
+    "evidence"
+  ],
+  "event_required_fields": [
+    "schema_version",
+    "event_id",
+    "correlation_id",
+    "source_id",
+    "sequence",
+    "occurred_at",
+    "observed_at",
+    "delivery",
+    "payload"
+  ],
+  "delivery_policy": {
+    "partition": "single_world",
+    "ordering": "strict_contiguous_sequence",
+    "duplicate_key": "event_id",
+    "identical_duplicate_action": "ACK_WITHOUT_PROJECTION_OR_SIDE_EFFECT",
+    "conflicting_duplicate_action": "QUARANTINE",
+    "gap_action": "QUARANTINE_WITHOUT_CURSOR_ADVANCE",
+    "rollback_action": "QUARANTINE_WITHOUT_CURSOR_ADVANCE",
+    "stale_action": "QUARANTINE_WITHOUT_PROJECTION_OR_SIDE_EFFECT",
+    "replay": "deterministic_in_recorded_order"
+  },
+  "source_adapters": {
+    "godot_world_state": "source-godot",
+    "stt_result": "source-stt",
+    "user_action": "source-user-action"
+  },
+  "acceptance": {
+    "schema_decision_accuracy_percent": 100,
+    "ordered_delivery_success_percent": 100,
+    "duplicate_side_effect_suppression_percent": 100,
+    "event_loss_rate_max_percent": 1,
+    "replay_projection_hash_match_percent": 100
+  }
+}

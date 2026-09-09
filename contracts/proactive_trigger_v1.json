@@ -1,0 +1,104 @@
+{
+  "contract_id": "lumina.proactive.trigger.v1",
+  "work_item": "P4-05",
+  "status": "ACTIVE_LOCAL",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "purpose": "decide whether a proposed local proactive interruption should be shown without delivering or executing it",
+  "dependencies": {
+    "perception": "lumina_next/perception_v1.py",
+    "relationship_model": "lumina_next/relationship_model_v1.py",
+    "risk_policy": "lumina_next/risk_policy_v1.py"
+  },
+  "candidate_schema": "lumina.proactive.trigger.candidate.v1",
+  "decision_schema": "lumina.proactive.trigger.decision.v1",
+  "trigger_types": ["assistance", "interest_tip", "reminder", "safety_alert"],
+  "urgencies": ["routine", "important", "critical"],
+  "channels": ["visual", "voice"],
+  "required_candidate_fields": [
+    "schema_version",
+    "candidate_id",
+    "correlation_id",
+    "tenant_id",
+    "user_id",
+    "session_id",
+    "occurred_at",
+    "trigger_type",
+    "urgency",
+    "channel",
+    "confidence",
+    "observation",
+    "action_request"
+  ],
+  "relationship_preferences": {
+    "proactive_policy": ["allow", "important_only", "off"],
+    "proactive_min_confidence": "finite number in [0,1]",
+    "proactive_cooldown_seconds": "finite number in [0,86400]",
+    "quiet_hours_local": "enabled/start/end/utc_offset_minutes object or null",
+    "proactive_channel": ["any", "visual", "voice"]
+  },
+  "boundary_keys": [
+    "no_proactive_interruptions",
+    "no_voice_interruptions",
+    "no_safety_alerts"
+  ],
+  "decision_order": [
+    "candidate/action exact-user correlation and time binding",
+    "risk policy authorization",
+    "relationship setting validity",
+    "active relationship boundaries",
+    "proactive policy and preferred channel",
+    "quiet hours",
+    "exact-user cooldown",
+    "disengagement suppression",
+    "trigger-specific evidence",
+    "effective confidence threshold"
+  ],
+  "fail_closed": {
+    "no_explicit_proactive_policy": "off",
+    "invalid_relationship_setting": "NO_TRIGGER",
+    "risk_not_allowed": "NO_TRIGGER",
+    "unknown_or_cross-user_action_binding": "NO_TRIGGER",
+    "active_boundary": "NO_TRIGGER",
+    "quiet_hours": "NO_TRIGGER except validated critical safety candidate",
+    "cooldown": "NO_TRIGGER except validated critical safety candidate",
+    "disengagement": "NO_TRIGGER except validated critical safety candidate",
+    "missing_signal_or_low_confidence": "NO_TRIGGER",
+    "delivery_or_execution": "never performed by this service"
+  },
+  "critical_safety_override": {
+    "requirements": [
+      "trigger_type is safety_alert",
+      "urgency is critical",
+      "context.safety_validated is true",
+      "risk policy execution_permitted is true",
+      "required perception signal and confidence pass"
+    ],
+    "may_override": ["quiet_hours", "cooldown", "disengagement"],
+    "may_not_override": ["risk policy", "relationship boundary", "proactive policy", "preferred channel", "confidence"]
+  },
+  "explainability": {
+    "decision_fields": ["decision", "primary_reason", "reasons", "explanation"],
+    "gate_fields": ["confidence", "perception", "relationship", "quiet_hours", "cooldown", "risk"],
+    "relationship_grounding": "only applied exact-user settings and boundaries",
+    "determinism": "canonical JSON SHA-256 with explicit candidate time and history"
+  },
+  "acceptance": {
+    "proactive_precision_min": 0.85,
+    "proactive_precision_target": 0.95,
+    "proactive_recall_min": 0.9,
+    "critical_unsafe_interrupt_count_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "negative_control_pass_rate_min": 1.0,
+    "deterministic_replay_required": true,
+    "gate_claim": "NONE"
+  },
+  "non_claims": [
+    "G4 approval",
+    "human evaluation",
+    "live runtime integration",
+    "notification delivery",
+    "production cooldown persistence"
+  ]
+}

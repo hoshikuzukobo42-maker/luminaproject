@@ -1,0 +1,47 @@
+{
+  "contract_id": "lumina.g8.release-review-pack.v1",
+  "work_item": "P8-05",
+  "status": "IN_PROGRESS_REVIEW_PREPARATION",
+  "owner": "Exec/PM/Safety",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "evidence_dependencies": {
+    "P8-01": "lumina.release-engineering.acceptance.v1",
+    "P8-02": "lumina.slo-monitoring.acceptance.v1",
+    "P8-03": "lumina.incident-playbook.acceptance.v1",
+    "P8-04": "lumina.improvement-loop.acceptance.v1"
+  },
+  "review_state": {
+    "readiness_status": "READY_FOR_INDEPENDENT_REVIEW",
+    "decision": "HOLD",
+    "workflow_status": "IN_PROGRESS",
+    "completed": false,
+    "independent_approvals": 0,
+    "g8_pass_claim_count": 0
+  },
+  "acceptance": {
+    "evidence_bindings": 4,
+    "source_bindings": 24,
+    "acceptance_checks_percent_min": 100.0,
+    "known_missing_validation_count": 12,
+    "aggregate_external_effect_count_max": 0,
+    "false_green_controls_min": 40,
+    "false_green_rejection_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "independent_approvals": 0,
+    "g8_pass_claim_count": 0,
+    "decision": "HOLD"
+  },
+  "completion_policy": {
+    "formal_p8_05_completion_allowed": false,
+    "blocked_by": [
+      "independent Exec/PM/Safety signatures",
+      "P8-01 through P8-04 formal completion",
+      "production signing and fresh-host deployment",
+      "live SLO and incident exercise",
+      "G8 decision"
+    ]
+  },
+  "non_claims": ["G8 PASS", "P8-05 Completed", "independent approval", "production release", "live operations"]
+}

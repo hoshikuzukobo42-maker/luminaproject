@@ -1,0 +1,103 @@
+{
+  "contract_id": "lumina.quality-triage.v1",
+  "work_item": "P7-04",
+  "status": "ACTIVE_SYNTHETIC_REFERENCE",
+  "formal_wbs_status": "Not Started",
+  "owner": "QA/PM",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "production_data_required": false,
+  "godot_required": false,
+  "canonical_wbs_source": {
+    "workbook": "lumina_virtual_agent_master_plan.xlsx",
+    "workbook_sha256": "4dc168148c50858d1d0d4abb5355f5afd44447b2332d507b488c341b58ad3a3f",
+    "sheet": "02_WBS_Detail",
+    "row": 56,
+    "range": "A56:P56",
+    "task": "quality triage",
+    "objective": "会話・自律・身体・安全の問題を分類して修正",
+    "deliverable": "Quality Backlog + burn-down",
+    "dependency": "P7-03",
+    "acceptance": "critical issue 0、重大以外に期限あり",
+    "kpi": "Critical open bugs = 0",
+    "gate": "G7"
+  },
+  "p7_03_binding": {
+    "status": "PASS_SYNTHETIC_PIPELINE",
+    "scope": "aggregate acceptance and discomfort category catalog only",
+    "issue_level_trace_claim": "NONE"
+  },
+  "taxonomy": {
+    "domains": ["autonomy", "body", "conversation", "safety"],
+    "severities": ["critical", "high", "medium", "low"],
+    "owner_by_domain": {
+      "autonomy": "QA_AUTONOMY",
+      "body": "QA_EMBODIMENT",
+      "conversation": "QA_CONVERSATION",
+      "safety": "SAFETY_REVIEW"
+    },
+    "sla_hours": {"critical": 4, "high": 24, "medium": 72, "low": 168}
+  },
+  "deduplication_policy": [
+    "canonical fingerprint is SHA-256 over exact domain and normalized synthetic title",
+    "same fingerprint collapses to earliest observed report",
+    "all report IDs remain represented by a sealed report-ID digest",
+    "unknown domain/severity or duplicate surviving fingerprint is rejected"
+  ],
+  "closure_policy": {
+    "critical": "must be CLOSED within four simulated hours",
+    "critical_evidence": ["fix SHA-256", "verification SHA-256", "review SHA-256", "closure provenance"],
+    "noncritical": "must have exact domain owner and severity SLA deadline"
+  },
+  "fail_closed": {
+    "missing_or_tampered_WBS_source": "REJECT",
+    "P7_03_evidence_or_scope_overclaim": "REJECT",
+    "unknown_domain_or_severity": "REJECT",
+    "surviving_duplicate_fingerprint": "REJECT",
+    "critical_open_or_missing_closure_evidence": "REJECT",
+    "noncritical_missing_owner_or_deadline": "REJECT",
+    "SLA_or_burn_down_mismatch": "REJECT",
+    "human_production_external_Godot_claim": "REJECT",
+    "G6_G7_or_formal_completion_claim": "REJECT"
+  },
+  "acceptance": {
+    "raw_issue_reports_min": 240,
+    "unique_issues_min": 160,
+    "duplicate_reports_min": 80,
+    "deduplication_percent_min": 100.0,
+    "classification_percent_min": 100.0,
+    "owner_coverage_percent_min": 100.0,
+    "critical_open_bugs_max": 0,
+    "noncritical_deadline_coverage_percent_min": 100.0,
+    "closure_evidence_percent_min": 100.0,
+    "provenance_completeness_percent_min": 100.0,
+    "false_green_controls_min": 32,
+    "false_green_rejection_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "actual_human_beta_participants_max": 0,
+    "production_records_read_max": 0,
+    "external_contacts_executed_max": 0,
+    "godot_live_actions_executed_max": 0
+  },
+  "dependency_status": {
+    "G6": "HOLD",
+    "G7": "NOT_APPROVED"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_completion_allowed": false,
+    "blocked_by": ["G6 independent approval", "actual human beta", "production issue data authorization", "G7 approval", "Godot live validation"]
+  },
+  "non_claims": [
+    "actual human beta",
+    "production issue quality",
+    "external contact",
+    "G6 approval",
+    "G7 approval",
+    "Godot live validation",
+    "formal WBS completion",
+    "P7-03 issue-level trace"
+  ]
+}

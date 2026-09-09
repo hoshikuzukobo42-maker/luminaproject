@@ -1,0 +1,20 @@
+{
+  "schema_version": "lumina.memory.control-service.contract.v1",
+  "default_storage_allowed": false,
+  "allowed_layers": ["working", "episodic", "semantic", "profile", "relationship"],
+  "controls": {
+    "consent": {"explicit_confirmation_required": true, "persistent": true},
+    "export": {"exact_confirmation": "EXPORT {count} MEMORY ITEMS", "one_time_receipt": true},
+    "forget_all": {"exact_confirmation": "DELETE {count} MEMORY ITEMS", "one_time_receipt": true, "post_delete_reappearance": 0}
+  },
+  "runtime_boundary": {
+    "all_memory_writes_call_can_save": true,
+    "conversation_write_layer": "episodic",
+    "relationship_state_write_layer": "relationship",
+    "session_only_persistence": "deny",
+    "api_routes": ["/memory/control/consent", "/memory/control/export", "/memory/control/forget-all"],
+    "consent_absent_behavior": "deny",
+    "cross_user_export": "deny",
+    "cross_user_delete": "deny"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "contract_id": "lumina.multi-user.identity.v1",
+  "work_item": "P6-01",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "production_sqlite_required": false,
+  "live_authentication_required": false,
+  "schemas": {
+    "context": "lumina.identity.context.v1",
+    "scope_token": "lumina.identity.scope-token.v1",
+    "memory_request": "lumina.identity.memory-request.v1",
+    "action_envelope": "lumina.identity.action-envelope.v1",
+    "authorization": "lumina.identity.authorization.v1",
+    "fixture": "lumina.identity.fixture.v1",
+    "evaluation": "lumina.identity.evaluation.v1"
+  },
+  "dependencies": {
+    "p3_retrieval": "lumina_next/memory_retrieval_v1.py",
+    "p4_risk_policy": "lumina_next/risk_policy_v1.py",
+    "p4_08_status": "NOT_APPROVED_NOT_PRESENT_AS_PROMOTED_GATE",
+    "g4_status": "NOT_APPROVED"
+  },
+  "identity_binding": [
+    "tenant_id",
+    "user_id",
+    "session_id",
+    "role",
+    "permissions",
+    "memory_scope.tenant_id",
+    "memory_scope.user_id",
+    "memory_scope.partition_id",
+    "world_state_scope.tenant_id",
+    "world_state_scope.user_id",
+    "world_state_scope.session_id",
+    "world_state_scope.state_id",
+    "provenance.source_id",
+    "provenance.correlation_id",
+    "provenance.observed_at",
+    "provenance.authentication_method"
+  ],
+  "scope_token_policy": {
+    "seal": "HMAC-SHA-256",
+    "one_time": true,
+    "maximum_ttl_seconds": 300,
+    "audience_bound": true,
+    "operation_bound": true,
+    "issuer_bound": true,
+    "canonical_context_sha256_bound": true,
+    "tamper": "REJECT",
+    "replay": "REJECT",
+    "expired": "REJECT",
+    "future": "REJECT"
+  },
+  "fail_closed": {
+    "unknown_field": "REJECT",
+    "unknown_role": "REJECT",
+    "role_permission_escalation": "REJECT",
+    "tenant_swap": "REJECT",
+    "user_swap_or_impersonation": "REJECT",
+    "session_swap": "REJECT",
+    "memory_partition_swap": "REJECT",
+    "world_state_swap": "REJECT",
+    "correlation_swap": "REJECT",
+    "cross_user_retrieval": "REJECT_BEFORE_P3",
+    "cross_user_action": "REJECT_BEFORE_P4",
+    "incomplete_provenance": "REJECT",
+    "elevated_action_without_P4_approval": "BLOCK"
+  },
+  "attack_matrix": {
+    "minimum_cross_user_pairs": 1000,
+    "attacks_per_pair": 2,
+    "required_attack_types": [
+      "cross_user_memory_retrieval",
+      "cross_user_action"
+    ]
+  },
+  "acceptance": {
+    "cross_user_attack_attempts_min": 2000,
+    "cross_user_rejection_percent_min": 100.0,
+    "cross_user_retrieval_authorized_count_max": 0,
+    "cross_user_action_authorized_count_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "unauthorized_action_count_max": 0,
+    "provenance_completeness_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "external_effects_executed_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "P4-08 approval",
+      "G4 approval",
+      "live authentication integration",
+      "human multi-user evaluation"
+    ]
+  },
+  "non_claims": [
+    "P4-08 approval",
+    "G4 approval",
+    "formal WBS promotion",
+    "live authentication integration",
+    "production SQLite integration",
+    "production user-data evaluation",
+    "human multi-user evaluation",
+    "external action execution"
+  ]
+}

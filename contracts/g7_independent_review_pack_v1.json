@@ -1,0 +1,63 @@
+{
+  "contract_id": "lumina.g7-independent-review-pack.v1",
+  "work_item": "P7-06",
+  "formal_wbs_status": "Not Started",
+  "canonical_wbs_source": {
+    "workbook_sha256_at_capture": "3037f976bb6b1d93a36126d3a96a4edf8a3d23dc06d7082ff4c9569bb935f7c2",
+    "snapshot": "outputs/night_lane_g7_review_pack_20260831/canonical_wbs_snapshot.xlsx",
+    "snapshot_sha256": "3037f976bb6b1d93a36126d3a96a4edf8a3d23dc06d7082ff4c9569bb935f7c2",
+    "sheet": "02_WBS_Detail",
+    "row": 58,
+    "range": "A58:P58",
+    "task": "G7 review",
+    "objective": "クローズドβから製品化へ進むか承認",
+    "deliverable": "G7 Evidence Pack",
+    "dependency": "P7-05",
+    "acceptance": "継続利用価値と安全性が合格",
+    "kpi": "Gate pass",
+    "gate": "G7"
+  },
+  "state_separation": {
+    "mechanical_verification_status": "PASS",
+    "readiness_status": "READY_FOR_INDEPENDENT_REVIEW",
+    "gate_decision": "HOLD",
+    "workflow_status": "IN_PROGRESS",
+    "completed": false,
+    "independent_approvals": 0,
+    "g7_pass_claim_count": 0
+  },
+  "evidence_policy": {
+    "bindings": ["P6-05", "P7-01", "P7-02", "P7-03", "P7-04", "P7-05"],
+    "source_bindings": 36,
+    "p7_05_transitive_closure": ["P7-03", "P7-04"],
+    "current_source_hash_required": true
+  },
+  "acceptance": {
+    "evidence_bindings_min": 6,
+    "source_bindings_min": 36,
+    "transitive_bindings_min": 2,
+    "known_gaps_min": 11,
+    "required_reviewer_roles": 3,
+    "false_green_controls_min": 40,
+    "false_green_rejection_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "independent_approvals_max": 0,
+    "g7_pass_claim_count_max": 0,
+    "unsafe_aggregate_count_max": 0,
+    "actual_human_beta_participants_max": 0,
+    "production_records_read_max": 0,
+    "external_contacts_executed_max": 0,
+    "godot_live_actions_executed_max": 0,
+    "release_authorized_count_max": 0
+  },
+  "promotion_policy": {
+    "formal_wbs_completion_allowed": false,
+    "g7_approved": false,
+    "p8_release_authorized": false,
+    "requires": ["authentic independent Exec/PM/Safety signatures", "G6 approval", "all blocking gaps replaced by sealed evidence", "separate authorized promotion action"]
+  },
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "godot_required": false
+}

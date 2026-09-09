@@ -1,0 +1,31 @@
+{
+  "contract_id": "lumina.memory.consent.v1",
+  "work_item": "P3-02",
+  "status": "ACTIVE_REFERENCE",
+  "owner": "UX/Privacy",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "default": "DENY_ALL_STORAGE",
+  "layers": ["working", "episodic", "semantic", "profile", "relationship"],
+  "controls": ["grant scoped storage", "revoke storage", "delete selected", "export selected"],
+  "receipt": {
+    "schema": "lumina.memory.control.receipt.v1",
+    "operations": ["DELETE", "EXPORT"],
+    "bindings": ["user_id", "operation", "item_ids", "issued_at", "expires_at", "one_time"],
+    "confirmation_pattern": "<OPERATION> <COUNT> MEMORY ITEMS"
+  },
+  "acceptance": {
+    "save_without_consent_max": 0,
+    "consent_decision_accuracy_percent_min": 100.0,
+    "revocation_effective_seconds_max_exclusive": 60,
+    "cross_user_export_leakage_max": 0,
+    "receipt_replay_success_max": 0
+  },
+  "live_backend_integration": "PENDING",
+  "live_ui_integration": "PENDING",
+  "persistent_consent_store": "PENDING",
+  "gate_target": "G3",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE"
+}

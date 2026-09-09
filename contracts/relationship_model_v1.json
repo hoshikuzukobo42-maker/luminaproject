@@ -1,0 +1,107 @@
+{
+  "contract_id": "lumina.relationship.model.v1",
+  "status": "ACTIVE_LOCAL",
+  "local_only": true,
+  "depends_on": {
+    "memory_architecture": "contracts/memory_architecture_v1.json",
+    "retrieval_implementation": "lumina_next/memory_retrieval_v1.py"
+  },
+  "purpose": "explain user-confirmed preferences, promises, trust signals, boundaries, and relationship changes without crossing user scope or inventing state",
+  "categories": {
+    "preference": {
+      "operations": ["set", "correct"],
+      "activation": "explicit confirmation, explicit correction, or prior confirmed memory",
+      "conflict": "quarantine all unresolved active values"
+    },
+    "promise": {
+      "operations": ["open", "fulfill", "breach", "cancel"],
+      "activation": "validated user-visible commitment",
+      "conflict": "quarantine contradictory open promises or outcomes"
+    },
+    "trust": {
+      "operations": ["set", "adjust"],
+      "activation": "validated direct observation or stronger provenance",
+      "derivation": "bounded baseline plus provenance-bearing adjustments",
+      "conflict": "quarantine contradictory baselines"
+    },
+    "boundary": {
+      "operations": ["enforce", "relax"],
+      "activation": "confirmed enforcement",
+      "relaxation": "explicit_user_correction covering every active enforcement event",
+      "conflict": "retain enforcement and quarantine unauthorized relaxation"
+    },
+    "relationship_change": {
+      "operations": ["set", "correct"],
+      "activation": "explicit confirmation, explicit correction, or prior confirmed memory",
+      "conflict": "quarantine all unresolved active values"
+    }
+  },
+  "event_required_fields": [
+    "event_id",
+    "tenant_id",
+    "user_id",
+    "session_id",
+    "sequence",
+    "occurred_at",
+    "category",
+    "key",
+    "value",
+    "operation",
+    "confidence",
+    "provenance"
+  ],
+  "provenance_required_fields": [
+    "source_id",
+    "correlation_id",
+    "confirmation_state"
+  ],
+  "confirmation_precedence": [
+    "explicit_user_correction",
+    "explicit_user_confirmation",
+    "validated_direct_observation",
+    "prior_confirmed_memory",
+    "inference"
+  ],
+  "scope_policy": {
+    "read": "exact tenant_id and user_id only",
+    "reference": "same tenant_id and user_id, earlier sequence only",
+    "cross_user_fallback": "forbidden",
+    "unknown_user": "empty grounded state"
+  },
+  "replay_policy": {
+    "ordering": ["tenant_id", "user_id", "sequence", "event_id"],
+    "duplicate_event_id": "reject",
+    "duplicate_scoped_sequence": "reject",
+    "as_of": "timezone-aware inclusive cutoff",
+    "deterministic_output": "canonical JSON SHA-256"
+  },
+  "fail_closed_policy": {
+    "minimum_confidence": 0.5,
+    "unconfirmed_durable_fact": "quarantine",
+    "unresolved_contradiction": "omit active value and quarantine event IDs without plaintext",
+    "unauthorized_boundary_relaxation": "retain enforcement and quarantine relaxation",
+    "invalid_provenance_or_reference": "reject model construction",
+    "unsupported_or_absent_state": "return no relationship fact"
+  },
+  "explainability": {
+    "active_item_fields": ["key", "value", "status", "explanation", "grounding"],
+    "grounding_fields": ["event_id", "session_id", "source_id", "correlation_id", "confirmation_state", "occurred_at"],
+    "quarantine_plaintext_retention": false,
+    "optional_memory_grounding": "MemoryRetrievalService exact-user results"
+  },
+  "identity_boundary": "relationship events cannot modify Lumina identity or persona invariants",
+  "acceptance": {
+    "cross_session_continuity_rate_min": 0.9,
+    "cross_user_leakage_count_max": 0,
+    "boundary_fail_closed_rate_min": 1.0,
+    "contradiction_fail_closed_rate_min": 1.0,
+    "deterministic_replay_required": true,
+    "gate_claim": "NONE"
+  },
+  "non_claims": [
+    "G3 approval",
+    "seven-day human evaluation",
+    "live runtime integration",
+    "production persistence wiring"
+  ]
+}

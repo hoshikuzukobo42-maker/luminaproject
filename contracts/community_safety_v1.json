@@ -1,0 +1,97 @@
+{
+  "contract_id": "lumina.community-safety.v1",
+  "work_item": "P6-04",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "godot_required": false,
+  "live_moderation_required": false,
+  "dependencies": {
+    "p6_01_identity": "lumina_next/multi_user_identity_v1.py",
+    "p6_02_social_protocol": "lumina_next/social_interaction_protocol_v1.py",
+    "p6_03_role_packs": "lumina_next/role_packs_v1.py",
+    "p4_08_status": "NOT_APPROVED",
+    "g4_status": "NOT_APPROVED",
+    "g6_status": "NOT_APPROVED"
+  },
+  "schemas": {
+    "incident_request": "lumina.community-safety.incident-request.v1",
+    "incident_decision": "lumina.community-safety.incident-decision.v1",
+    "appeal_request": "lumina.community-safety.appeal-request.v1",
+    "appeal_decision": "lumina.community-safety.appeal-decision.v1",
+    "audit_entry": "lumina.community-safety.audit-entry.v1",
+    "fixture": "lumina.community-safety.fixture.v1",
+    "evaluation": "lumina.community-safety.evaluation.v1"
+  },
+  "categories": {
+    "harassment": {"severity": "HIGH", "critical": false, "actions": ["WARN", "MUTE"]},
+    "threat": {"severity": "CRITICAL", "critical": true, "actions": ["REMOVE", "HANDOFF", "STOP"]},
+    "self_harm": {"severity": "CRITICAL", "critical": true, "actions": ["HANDOFF", "STOP"]},
+    "crisis": {"severity": "CRITICAL", "critical": true, "actions": ["HANDOFF", "STOP"]},
+    "privacy_leak": {"severity": "CRITICAL", "critical": true, "actions": ["REMOVE", "HANDOFF", "STOP"]},
+    "impersonation": {"severity": "HIGH", "critical": false, "actions": ["MUTE", "REMOVE"]},
+    "spam": {"severity": "MEDIUM", "critical": false, "actions": ["WARN", "MUTE"]},
+    "unsafe_external_request": {"severity": "CRITICAL", "critical": true, "actions": ["HANDOFF", "STOP"]}
+  },
+  "binding_policy": [
+    "P6-01 one-time identity token bound to tenant/user/session/provenance",
+    "P6-02 room participant presence and reporter current-speaker state",
+    "P6-03 sealed consultation role decision with no external or live action",
+    "incident category/severity/evidence hash and simulated response time",
+    "subject-only appeal bound to original decision hash",
+    "append-only hash-chain audit provenance"
+  ],
+  "fail_closed": {
+    "token_tamper_replay_expiry": "REJECT",
+    "tenant_user_session_room_or_provenance_mismatch": "REJECT",
+    "cross_user_or_impersonation": "REJECT",
+    "unknown_category_or_severity_mismatch": "REJECT",
+    "evidence_or_role_decision_tamper": "REJECT",
+    "response_seconds_greater_than_or_equal_to_300": "REJECT",
+    "external_effect_request": "REJECT",
+    "appeal_by_non_subject_or_wrong_decision": "REJECT",
+    "audit_hash_chain_tamper": "REJECT"
+  },
+  "appeal_policy": {
+    "eligible_actor": "incident subject only",
+    "result": "SIMULATED_REVIEW_REQUIRED",
+    "containment_auto_reversal": false,
+    "human_review_executed": false,
+    "external_action_executed": false
+  },
+  "acceptance": {
+    "category_count": 8,
+    "scenario_count_min": 160,
+    "scenarios_per_category_min": 20,
+    "critical_detection_percent_min": 100.0,
+    "critical_containment_percent_min": 100.0,
+    "incident_response_seconds_max_exclusive": 300,
+    "cross_user_rejection_percent_min": 100.0,
+    "cross_user_authorized_count_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "unauthorized_moderation_count_max": 0,
+    "external_actions_executed_max": 0,
+    "trace_completeness_percent_min": 100.0,
+    "provenance_completeness_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": ["P4-08 approval", "G4 approval", "G6 approval", "live moderation integration", "human moderation evaluation"]
+  },
+  "non_claims": [
+    "P4-08 approval",
+    "G4 approval",
+    "G6 approval",
+    "formal WBS promotion",
+    "Godot integration",
+    "live moderation or handoff",
+    "human moderation evaluation"
+  ]
+}

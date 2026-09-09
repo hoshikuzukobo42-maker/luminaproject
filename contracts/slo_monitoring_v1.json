@@ -1,0 +1,56 @@
+{
+  "contract_id": "lumina.slo.monitoring.v1",
+  "work_item": "P8-02",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "Ops/QA",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "live_dashboard_required_for_local_acceptance": false,
+  "metrics": [
+    "response_latency_ms",
+    "stop_ack_seconds",
+    "memory_leakage_count",
+    "unsafe_autonomy_count",
+    "safety_violation_count",
+    "avatar_heartbeat_gap_seconds"
+  ],
+  "dependencies": {
+    "p8_01_status": "LOCAL_MECHANICAL_READY",
+    "g7_status": "NOT_APPROVED",
+    "g8_status": "NOT_APPROVED"
+  },
+  "acceptance": {
+    "metric_count_min": 6,
+    "anomaly_trials_min": 240,
+    "anomaly_detection_percent_min": 100.0,
+    "before_impact_percent_min": 100.0,
+    "mttd_seconds_max_exclusive": 300.0,
+    "false_positive_count_max": 0,
+    "trace_provenance_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "production_telemetry_reads_max": 0,
+    "host_dashboard_writes_max": 0,
+    "external_notifications_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "P8-01 formal completion",
+      "live SLO dashboard",
+      "pager routing",
+      "production telemetry calibration",
+      "G8 independent approval"
+    ]
+  },
+  "non_claims": [
+    "production monitoring",
+    "live dashboard connection",
+    "real user impact prevention",
+    "pager connection",
+    "G8 approval",
+    "formal WBS promotion"
+  ]
+}

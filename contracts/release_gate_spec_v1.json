@@ -1,0 +1,31 @@
+{
+  "schema_version": "lumina.release.gate-spec.v1",
+  "scope": "P0-06 mechanical readiness only",
+  "required_stages": ["preflight", "closure", "acceptance", "soak", "stop", "residual_zero", "rollback"],
+  "evidence_policy": {
+    "mode": "live-local",
+    "maximum_age_seconds": 86400,
+    "maximum_future_skew_seconds": 120,
+    "synthetic_allowed": false,
+    "dotnet_or_mono_allowed": false,
+    "candidate_and_run_binding_required": true,
+    "unique_evidence_hash_per_stage": true
+  },
+  "thresholds": {
+    "preflight_false_positive_count": 0,
+    "closure_trace_completeness_minimum": 0.98,
+    "acceptance_critical_failures": 0,
+    "soak_duration_seconds_minimum": 1800,
+    "soak_crashes": 0,
+    "residual_processes": 0,
+    "residual_listeners": 0,
+    "rollback_recovery_seconds_maximum": 300
+  },
+  "decision_boundary": {
+    "mechanical_success": "READY_FOR_INDEPENDENT_REVIEW",
+    "any_error": "BLOCKED_FAIL_CLOSED",
+    "gate_pass_emitted": false,
+    "release_permission_emitted": false,
+    "independent_review_required": true
+  }
+}

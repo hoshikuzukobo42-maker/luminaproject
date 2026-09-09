@@ -1,0 +1,21 @@
+{
+  "contract_id": "lumina.perception.v1",
+  "status": "ACTIVE",
+  "local_only": true,
+  "input_fact_families": ["speech", "position", "gaze", "operations"],
+  "inference_labels": ["trouble", "interest", "disengagement", "none"],
+  "invariants": [
+    "facts_and_inferences_are_separate_arrays",
+    "every_inference_has_bounded_confidence",
+    "every_positive_inference_references_observed_fact_ids",
+    "primary_state_is_inference_not_fact",
+    "no_sensitive_attribute_inference"
+  ],
+  "acceptance": {
+    "fact_inference_separation_percent": 100,
+    "confidence_bounds_percent": 100,
+    "machine_fixture_macro_f1_min": 0.9,
+    "machine_fixture_ece_max": 0.15,
+    "gate_claim": "NONE"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "contract_id": "lumina.beta.cohort.protocol.v1",
+  "work_item": "P7-01",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "PM/UX",
+  "local_only": true,
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "production_user_data_required": false,
+  "godot_required": false,
+  "live_enrollment_required": false,
+  "cohort": {
+    "target_size": 24,
+    "duration_days": 30,
+    "minimum_sessions": 6,
+    "maximum_sessions": 20,
+    "stratum_slots": {
+      "accessibility": 8,
+      "new_user": 8,
+      "returning_user": 8
+    }
+  },
+  "inclusion_rules": [
+    "adult_18_plus",
+    "ja_jp_locale",
+    "macos_arm64_sandbox",
+    "consent_capacity_confirmed",
+    "emergency_stop_control_accessible"
+  ],
+  "exclusion_rules": [
+    "active_crisis",
+    "conflicting_study",
+    "employee_or_vendor",
+    "regulated_advice_context"
+  ],
+  "consent": {
+    "disclosures": [
+      "beta_scope_and_experimental_status",
+      "collected_data_categories",
+      "retention_30_days",
+      "voluntary_participation",
+      "withdrawal_and_opt_out",
+      "export_and_delete_controls",
+      "known_risks_and_no_regulated_advice",
+      "incident_and_support_contact"
+    ],
+    "retention_days": 30,
+    "opt_out": true,
+    "export": true,
+    "delete": true,
+    "renewal_on_material_change": true
+  },
+  "hard_stop_conditions": [
+    "CONSENT_VIOLATION",
+    "CRITICAL_OPEN_BUG",
+    "CRITICAL_SAFETY_INCIDENT",
+    "CROSS_USER_LEAKAGE",
+    "EVIDENCE_INTEGRITY_FAILURE",
+    "PRIVACY_BREACH",
+    "STOP_CONTROL_FAILURE",
+    "UNAUTHORIZED_EXTERNAL_ACTION"
+  ],
+  "dependencies": {
+    "p6_01": "LOCAL_MECHANICAL_CANDIDATE",
+    "p6_02": "LOCAL_MECHANICAL_CANDIDATE",
+    "p6_03": "LOCAL_MECHANICAL_CANDIDATE",
+    "p6_04": "NOT_APPROVED",
+    "p6_05": "NOT_APPROVED",
+    "g6_status": "NOT_APPROVED"
+  },
+  "acceptance": {
+    "candidate_scenarios_min": 120,
+    "candidate_decision_accuracy_percent_min": 100.0,
+    "stop_scenarios_min": 80,
+    "stop_decision_accuracy_percent_min": 100.0,
+    "cohort_readiness_percent_min": 100.0,
+    "consent_coverage_percent_min": 100.0,
+    "hard_stop_rule_coverage_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "actual_participants_enrolled_max": 0,
+    "human_consent_records_collected_max": 0,
+    "production_user_records_read_max": 0,
+    "external_contacts_executed_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "P6-04 completion",
+      "P6-05/G6 independent approval",
+      "accountable PM/UX approval",
+      "human consent review",
+      "production enrollment authorization"
+    ]
+  },
+  "non_claims": [
+    "G6 approval",
+    "G7 approval",
+    "formal WBS promotion",
+    "actual cohort approval",
+    "human consent collection",
+    "participant enrollment",
+    "production user data access",
+    "external participant contact"
+  ]
+}

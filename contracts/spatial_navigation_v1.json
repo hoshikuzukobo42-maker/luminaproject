@@ -1,0 +1,93 @@
+{
+  "schema_version": "lumina.spatial.navigation.contract.v1",
+  "work_item": "P5-02",
+  "service_version": "lumina.spatial.navigation.v1",
+  "pipeline": [
+    "world_state",
+    "route_plan",
+    "risk_permission",
+    "local_fake_dispatch_interface",
+    "rollback_result"
+  ],
+  "request_schema": "lumina.spatial.navigation.request.v1",
+  "plan_schema": "lumina.spatial.navigation.plan.v1",
+  "result_schema": "lumina.spatial.navigation.result.v1",
+  "trace_schema": "lumina.spatial.navigation.trace.v1",
+  "world_state": {
+    "canonical_validator": "lumina_next.world_state_v1.validate_world_state_snapshot",
+    "navigation_grid_required": true,
+    "grid_dimension_max": 32,
+    "obstacle_cells_fail_closed": true,
+    "occluded_cells_fail_closed": true,
+    "destination_binding_required": true,
+    "seat_requires_unoccupied_reachable_sit_capability": true,
+    "kill_switch_must_be_disengaged": true,
+    "privacy_navigation_collision_safe_required": true
+  },
+  "route_plan": {
+    "algorithm": "deterministic_breadth_first_search_4_neighbor",
+    "neighbor_order": [[0, -1], [1, 0], [0, 1], [-1, 0]],
+    "max_waypoints": 128,
+    "user_and_object_approach_standoff_cells_min": 1,
+    "seat_exact_arrival": true,
+    "blocked_and_occluded_cells_excluded": true,
+    "deterministic_replay_required": true
+  },
+  "dispatch_interface": {
+    "module": "lumina_next.embodied_action_api_v1",
+    "service": "EmbodiedActionService",
+    "only_adapter": "LocalFakeEmbodiedAdapter",
+    "action_intents": ["approach", "sit"],
+    "risk_permission_delegated_to_p5_01": true,
+    "correlation_binding_required": true,
+    "world_state_hash_binding_required": true,
+    "idempotency_scope": ["tenant_id", "user_id", "idempotency_key"]
+  },
+  "lifecycle": {
+    "cancel_before_plan": true,
+    "deadline_timeout": true,
+    "pending_dispatch_cancel": true,
+    "failure_timeout_rollback": true,
+    "duplicate_side_effect_suppression": true
+  },
+  "trace_stages": [
+    "VALIDATE",
+    "IDEMPOTENCY",
+    "WORLD_STATE",
+    "ROUTE_PLAN",
+    "RISK_PERMISSION",
+    "DISPATCH",
+    "ROLLBACK",
+    "RESULT"
+  ],
+  "acceptance": {
+    "scenarios_min": 100,
+    "feasible_scenarios_min": 100,
+    "navigation_success_percent_min": 95.0,
+    "critical_unsafe_execution_max": 0,
+    "cross_user_leakage_max": 0,
+    "duplicate_side_effect_max": 0,
+    "deterministic_replay_percent_min": 100.0,
+    "trace_correlation_complete_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0
+  },
+  "isolation": {
+    "p4_08_approved": false,
+    "g5_approved": false,
+    "godot_live_action": false,
+    "external_execution": false,
+    "network_used": false,
+    "dotnet_or_mono_used": false,
+    "paid_api_used": false
+  },
+  "promotion": {
+    "local_reference_candidate": true,
+    "formal_wbs_promotion": "HOLD_DEPENDENCY_GATE",
+    "remaining_conditions": [
+      "P4-08 approval",
+      "G5 approval",
+      "approved live navigation authority",
+      "Godot integration and physical-world safety validation"
+    ]
+  }
+}

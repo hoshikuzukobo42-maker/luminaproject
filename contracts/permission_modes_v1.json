@@ -1,0 +1,30 @@
+{
+  "contract_id": "lumina.permission.modes.v1",
+  "work_item": "P4-04",
+  "status": "ACTIVE",
+  "owner": "Safety/UX",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "modes": {
+    "PROPOSE_ONLY": "never issue an elevated-action receipt",
+    "CONFIRM_EACH": "issue only after exact per-action confirmation",
+    "LIMITED_AUTO": "issue only for active user/effect/target grants; destructive, financial, and privilege effects still require exact confirmation"
+  },
+  "default_mode": "PROPOSE_ONLY",
+  "limited_auto_effects": ["external_communication", "sensor_capture"],
+  "always_confirm_effects": ["delete_data", "financial_transaction", "privilege_change"],
+  "receipt_ttl_seconds_max": 60,
+  "acceptance": {
+    "permission_revocation_seconds_max_exclusive": 60,
+    "post_revocation_receipt_issuance_max": 0,
+    "cross_user_grant_leakage_max": 0,
+    "mode_decision_accuracy_percent_min": 100.0
+  },
+  "dependencies": ["P4-03"],
+  "gate_target": "G4",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE",
+  "live_ui_claim": "NONE",
+  "persistent_store_claim": "NONE"
+}

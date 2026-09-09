@@ -1,0 +1,112 @@
+{
+  "schema_version": "lumina.embodied.action.contract.v1",
+  "work_item": "P5-01",
+  "api_version": "lumina.embodied.action.api.v1",
+  "request_schema": "lumina.embodied.action.request.v1",
+  "result_schema": "lumina.embodied.action.result.v1",
+  "cancel_result_schema": "lumina.embodied.action.cancel.result.v1",
+  "trace_schema": "lumina.embodied.action.trace.v1",
+  "intent_types": {
+    "look": {
+      "target": "user_or_object",
+      "parameters": ["duration_ms", "max_turn_degrees"]
+    },
+    "gesture": {
+      "target": "none",
+      "parameters": ["name", "duration_ms"]
+    },
+    "point": {
+      "target": "object",
+      "parameters": ["duration_ms"]
+    },
+    "sit": {
+      "target": "object",
+      "parameters": ["duration_ms"]
+    },
+    "stand": {
+      "target": "none",
+      "parameters": ["duration_ms"]
+    },
+    "approach": {
+      "target": "user_or_object",
+      "parameters": ["stop_distance_m", "max_travel_distance_m", "speed_mps"]
+    }
+  },
+  "world_state_preconditions": {
+    "canonical_validator": "lumina_next.world_state_v1.validate_world_state_snapshot",
+    "freshness_fail_closed": true,
+    "tenant_binding_required": true,
+    "actor_confidence_min": 0.9,
+    "target_confidence_min": 0.85,
+    "kill_switch_must_be_disengaged": true,
+    "privacy_safe_required": true,
+    "movement_requires_navigation_safe_and_collision_clear": true,
+    "approach_minimum_stop_distance_m": 0.8
+  },
+  "risk_and_permission": {
+    "risk_policy": "lumina.risk.policy.v1",
+    "effect_class": "write_local_reversible",
+    "rollback_required": true,
+    "permission_receipt_schema": "lumina.embodied.action.permission.reference.v1",
+    "permission_mode_source": "lumina.permission.mode.v1",
+    "receipt_scope": "LOCAL_FAKE_ADAPTER_ONLY",
+    "receipt_authorization_basis": "LOCAL_TEST_FIXTURE_NOT_HUMAN_APPROVAL",
+    "receipt_one_time": true,
+    "p4_08_approved": false,
+    "g4_approved": false,
+    "live_authorization_value": false
+  },
+  "idempotency": {
+    "scope": ["tenant_id", "user_id", "idempotency_key"],
+    "identical_retry": "DUPLICATE_WITH_SIDE_EFFECT_SUPPRESSED",
+    "conflicting_retry": "IDEMPOTENCY_CONFLICT",
+    "receipt_replay": "BLOCK",
+    "duplicate_dispatch_scope": "BLOCK"
+  },
+  "lifecycle": {
+    "deadline_seconds_max": 30,
+    "cancel_before_dispatch": true,
+    "pending_fake_dispatch_cancel": true,
+    "timeout_after_fake_apply_requires_rollback": true,
+    "failure_after_fake_apply_requires_rollback": true,
+    "rollback_strategy": "restore_prior_pose"
+  },
+  "trace_stages": [
+    "VALIDATE",
+    "IDEMPOTENCY",
+    "WORLD_PRECONDITION",
+    "RISK_PERMISSION",
+    "DISPATCH",
+    "ROLLBACK",
+    "RESULT"
+  ],
+  "isolation": {
+    "only_adapter_class": "LocalFakeEmbodiedAdapter",
+    "godot_action_fired": false,
+    "external_execution": false,
+    "network_used": false,
+    "dotnet_or_mono_used": false,
+    "paid_api_used": false
+  },
+  "acceptance": {
+    "service_dispatch_attempts_min": 200,
+    "fake_adapter_dispatch_calls_min": 200,
+    "dispatch_latency_p95_ms_max": 300.0,
+    "critical_unsafe_execution_max": 0,
+    "cross_user_leakage_max": 0,
+    "duplicate_side_effect_max": 0,
+    "deterministic_replay_percent_min": 100.0,
+    "trace_correlation_complete_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0
+  },
+  "promotion": {
+    "local_reference_candidate": true,
+    "formal_wbs_promotion": "HOLD_DEPENDENCY_GATE",
+    "remaining_conditions": [
+      "P4-08 approval",
+      "G4 approval",
+      "approved live permission authority",
+      "Godot adapter implementation and live safety validation"
+    ]
+  }
+}

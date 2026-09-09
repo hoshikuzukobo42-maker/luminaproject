@@ -1,0 +1,51 @@
+{
+  "contract_id": "lumina.incident.playbook.v1",
+  "work_item": "P8-03",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "Ops/Safety",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "live_incident_required_for_local_acceptance": false,
+  "incident_types": ["AUTONOMY_RUNAWAY", "MEMORY_LEAKAGE", "MODEL_MALFUNCTION", "AVATAR_STOP"],
+  "required_steps": ["DETECT", "CLASSIFY", "ASSIGN_OWNER", "CONTAIN", "STOP", "RECOVER", "VERIFY", "CLOSE"],
+  "dependencies": {
+    "p8_01_status": "LOCAL_MECHANICAL_READY",
+    "p8_02_status": "LOCAL_MONITORING_READY",
+    "g8_status": "NOT_APPROVED"
+  },
+  "acceptance": {
+    "incident_type_count_min": 4,
+    "synthetic_incident_trials_min": 200,
+    "closure_percent_min": 100.0,
+    "owner_coverage_percent_min": 100.0,
+    "required_plan_coverage_percent_min": 100.0,
+    "mttr_seconds_max_exclusive": 1800.0,
+    "trace_completeness_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "unsafe_actions_after_containment_max": 0,
+    "external_contacts_executed_max": 0,
+    "process_signals_sent_max": 0,
+    "production_records_read_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "P8-01/P8-02 formal completion",
+      "live incident exercise",
+      "real contact tree verification",
+      "production rollback rehearsal",
+      "G8 independent approval"
+    ]
+  },
+  "non_claims": [
+    "live incident response",
+    "external contact execution",
+    "process termination",
+    "production rollback",
+    "G8 approval",
+    "formal WBS promotion"
+  ]
+}

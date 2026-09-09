@@ -1,0 +1,72 @@
+{
+  "contract_id": "lumina.goal.intent.model.v1",
+  "work_item": "P4-02",
+  "status": "ACTIVE",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "input_schema_version": "lumina.goal.intent.context.v1",
+  "decision_schema_version": "lumina.goal.intent.decision.v1",
+  "policy_version": "lumina.goal.intent.policy.v1",
+  "candidate_sources": ["role", "user", "venue"],
+  "candidate_horizons": ["short", "medium"],
+  "priority_policy": {
+    "source_base": {"user": 600, "venue": 400, "role": 200},
+    "explicit_user_bonus": 100,
+    "short_horizon_bonus": 20,
+    "declared_priority_range": [0, 100],
+    "tie_break": "priority_score descending, then canonical goal_id ascending"
+  },
+  "lifecycle_actions": [
+    "START",
+    "CONTINUE",
+    "INTERRUPT",
+    "PREEMPT",
+    "RESUME",
+    "CANCEL",
+    "SAFE_IDLE"
+  ],
+  "required_candidate_explanation": [
+    "source",
+    "source_id",
+    "priority_score",
+    "explanation",
+    "evidence_refs",
+    "interrupt_when",
+    "preempt_when",
+    "resume_when",
+    "cancel_when"
+  ],
+  "fail_closed": {
+    "unsafe_world_or_risk": "SAFE_IDLE_ONLY",
+    "stale_world_role_relationship_objective_or_active_goal": "SAFE_IDLE_ONLY",
+    "unsafe_or_unknown_goal_type": "SAFE_IDLE_ONLY",
+    "no_role_allowed_candidate": "SAFE_IDLE_ONLY",
+    "emergency_or_cancel_signal": "SAFE_IDLE_ONLY",
+    "cross_user_context": "REJECT_BEFORE_OUTPUT",
+    "unknown_schema_or_fields": "REJECT",
+    "noncanonical_json": "REJECT",
+    "decision_tamper": "REJECT"
+  },
+  "autonomy_orchestrator_integration": {
+    "dependency": "lumina.autonomy.orchestrator.v1",
+    "adapter": "GoalIntentModel.autonomy_goal_selector",
+    "outer_unsafe_or_stale_world_may_not_be_overridden_by_embedded_context": true,
+    "correlation_id_must_match": true
+  },
+  "acceptance": {
+    "goal_consistency_percent_min": 90.0,
+    "deterministic_replay_percent_min": 100.0,
+    "unsafe_or_stale_non_idle_selections_max": 0,
+    "cross_user_leakage_count_max": 0,
+    "minimum_golden_cases": 24,
+    "lifecycle_action_coverage_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0
+  },
+  "dependencies": ["P4-01", "P2-05", "P3-04"],
+  "gate_target": "G4",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE",
+  "live_integration_claim": "NONE"
+}

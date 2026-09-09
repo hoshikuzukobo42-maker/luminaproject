@@ -1,0 +1,33 @@
+{
+  "contract_id": "lumina.autonomy.watchdog.v1",
+  "work_item": "P4-06",
+  "status": "ACTIVE",
+  "owner": "Runtime/Safety",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "detectors": {
+    "heartbeat_timeout_seconds": 5.0,
+    "max_repeated_action_count": 3,
+    "cpu_percent_max": 90.0,
+    "memory_percent_max": 90.0,
+    "resource_consecutive_limit": 3,
+    "trace_incomplete": "immediate_safe_idle",
+    "stop_requested": "immediate_safe_idle"
+  },
+  "kill_switch": "latched KILLED state until explicit residual-zero reset",
+  "safe_idle": "blocks action execution and remains latched until explicit residual-zero reset",
+  "acceptance": {
+    "recovery_seconds_max_exclusive": 30.0,
+    "hazard_detection_percent_min": 100.0,
+    "kill_switch_success_percent_min": 100.0,
+    "unsafe_execution_after_detection_max": 0,
+    "minimum_hazard_cases": 100
+  },
+  "dependencies": ["P4-01"],
+  "gate_target": "G4",
+  "gate_claim": "NONE",
+  "os_process_signal_claim": "NONE",
+  "live_integration_claim": "NONE",
+  "human_review_claim": "NONE"
+}

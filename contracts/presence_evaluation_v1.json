@@ -1,0 +1,85 @@
+{
+  "schema_version": "lumina.presence.evaluation.contract.v1",
+  "work_item": "P5-05",
+  "evaluator_version": "lumina.presence.evaluation.v1",
+  "request_schema": "lumina.presence.evaluation.request.v1",
+  "result_schema": "lumina.presence.evaluation.result.v1",
+  "proxy_scope": "machine_presence_proxy_only",
+  "components": {
+    "conversation_action_sync": {"weight": 0.20, "maximum_start_latency_ms": 750},
+    "semantic_match": {"weight": 0.20, "required": true},
+    "contact_comfort_safety": {"weight": 0.25, "required": true},
+    "response_latency": {"weight": 0.15, "maximum_completion_latency_ms": 1500},
+    "idle_gesture_motion_continuity": {"weight": 0.20, "required": true}
+  },
+  "conversation_cues": {
+    "welcome": ["approach", "idle", "moving", "attending"],
+    "give_space": ["walk", "attending", "moving", "idle"],
+    "attend": ["look", "idle", "listening", "attending"],
+    "invite_sit": ["sit_down", "standing", "posture_transition", "seated"],
+    "acknowledge": ["gesture", "attending", "gesturing", "attending"],
+    "seated_pause": ["sit_idle", "seated", "idle", "seated"],
+    "resume": ["stand_up", "seated", "posture_transition", "standing"],
+    "point_out": ["point", "attending", "gesturing", "attending"]
+  },
+  "integration": {
+    "P5_01_EMBODIED_ACTION": "lumina.embodied.action.api.v1 via P5-03 local fake graph",
+    "P5_02_SPATIAL_NAVIGATION": "lumina.spatial.navigation.v1 via P5-03 local fake graph",
+    "P5_03_MOTION_SEMANTICS": "lumina.motion.semantics.v1",
+    "P5_04_PROXEMICS_RULES": "lumina.proxemics.rules.v1",
+    "completed_proxemics_safety_result_required": true,
+    "motion_or_proxemics_execution_result_required": true,
+    "dependency_result_and_trace_hash_validation": true,
+    "same_correlation_tenant_user_session_scope": true
+  },
+  "trace_stages": [
+    "VALIDATE",
+    "CONVERSATION_SYNC",
+    "SEMANTIC_MATCH",
+    "SAFETY_BOUNDARY",
+    "RESPONSE_LATENCY",
+    "CONTINUITY",
+    "TRACE_PROVENANCE",
+    "MACHINE_PROXY",
+    "RESULT"
+  ],
+  "acceptance": {
+    "deterministic_scenarios_min": 200,
+    "machine_presence_proxy_percent_min": 80.0,
+    "semantic_match_percent_min": 100.0,
+    "safety_pass_percent_min": 100.0,
+    "trace_correlation_complete_percent_min": 100.0,
+    "provenance_complete_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "processing_latency_p95_ms_max": 300.0,
+    "critical_unsafe_execution_max": 0,
+    "contact_violations_max": 0,
+    "comfort_violations_max": 0,
+    "cross_user_leakage_max": 0,
+    "unauthorized_execution_max": 0,
+    "external_execution_max": 0,
+    "duplicate_side_effect_max": 0,
+    "negative_controls_percent_min": 100.0
+  },
+  "non_claims": {
+    "human_presence_improvement_20_percent": false,
+    "blind_review": false,
+    "human_evaluation": false,
+    "subjective_presence": false
+  },
+  "isolation": {
+    "p4_08_approved": false,
+    "g4_approved": false,
+    "g5_approved": false,
+    "godot_live_action": false,
+    "external_execution": false,
+    "network_used": false,
+    "dotnet_or_mono_used": false,
+    "paid_api_used": false
+  },
+  "promotion": {
+    "local_reference_candidate": true,
+    "formal_wbs_promotion": "HOLD_DEPENDENCY_GATE",
+    "remaining_conditions": ["P4-08 approval", "G4 approval", "G5 approval", "human/blind presence study", "Godot/live safety validation"]
+  }
+}

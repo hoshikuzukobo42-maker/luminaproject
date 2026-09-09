@@ -1,0 +1,60 @@
+{
+  "contract_id": "lumina.beta-decision-memo.v1",
+  "work_item": "P7-05",
+  "status": "ACTIVE_SYNTHETIC_REFERENCE",
+  "formal_wbs_status": "Not Started",
+  "canonical_wbs_source": {
+    "workbook_sha256_at_capture": "3037f976bb6b1d93a36126d3a96a4edf8a3d23dc06d7082ff4c9569bb935f7c2",
+    "snapshot": "outputs/night_lane_beta_decision_20260831/canonical_wbs_snapshot.xlsx",
+    "snapshot_sha256": "3037f976bb6b1d93a36126d3a96a4edf8a3d23dc06d7082ff4c9569bb935f7c2",
+    "sheet": "02_WBS_Detail",
+    "row": 57,
+    "range": "A57:P57",
+    "task": "release recommendation",
+    "objective": "継続・縮小・中止をデータで判断",
+    "deliverable": "Beta Decision Memo",
+    "dependency": "P7-03:P7-04",
+    "acceptance": "KPI・リスク・学習事項が意思決定可能",
+    "kpi": "Decision pack complete",
+    "gate": "G7"
+  },
+  "decision_semantics": {
+    "candidate_decisions": ["CONTINUE", "SCALE_DOWN", "STOP"],
+    "interim_disposition": "HOLD",
+    "decision_pack_complete": true,
+    "meaning": "all required evidence, KPI, risk, learning, unknown, recommendation, and reconsideration sections are sealed",
+    "does_not_mean": ["recommendation authorized", "release authorized", "G6 approved", "G7 approved", "formal WBS completed"]
+  },
+  "required_sections": ["evidence", "kpis", "risks", "learnings", "unknowns", "recommendation", "reconsideration_conditions"],
+  "acceptance": {
+    "evidence_bindings_min": 2,
+    "source_bindings_min": 12,
+    "decision_pack_completeness_percent_min": 100.0,
+    "risk_owner_due_coverage_percent_min": 100.0,
+    "unknown_owner_due_coverage_percent_min": 100.0,
+    "learning_provenance_percent_min": 100.0,
+    "false_green_controls_min": 40,
+    "false_green_rejection_percent_min": 100.0,
+    "deterministic_replay_percent_min": 100.0,
+    "critical_open_bugs_max": 0,
+    "actual_human_beta_participants_max": 0,
+    "production_records_read_max": 0,
+    "external_contacts_executed_max": 0,
+    "godot_live_actions_executed_max": 0,
+    "recommendation_authorized_count_max": 0,
+    "release_authorized_count_max": 0
+  },
+  "fail_closed": [
+    "WBS/evidence/source digest drift",
+    "synthetic KPI relabelled as actual",
+    "missing KPI/risk/learning/unknown/owner/due/provenance",
+    "HOLD changed to CONTINUE/SCALE_DOWN/STOP without new authorized evidence",
+    "decision-pack completeness changed into recommendation or release authorization",
+    "G6/G7/human/production/Godot/formal completion overclaim"
+  ],
+  "dependency_status": {"G6": "HOLD", "G7": "NOT_APPROVED"},
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "godot_required": false
+}

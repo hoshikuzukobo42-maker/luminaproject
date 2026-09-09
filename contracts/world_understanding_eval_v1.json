@@ -1,0 +1,81 @@
+{
+  "contract_id": "lumina.world.understanding.eval.v1",
+  "status": "ACTIVE",
+  "work_item": "P2-06",
+  "owner": "QA/AI",
+  "local_only": true,
+  "network_required": false,
+  "dotnet_required": false,
+  "fixture_schema_version": "lumina.world.understanding.eval.fixture.v1",
+  "report_schema_version": "lumina.world.understanding.eval.report.v1",
+  "dependencies": {
+    "world_state_schema": "lumina.world.state.snapshot.v1",
+    "world_state_event": "lumina.world.state.event.v1",
+    "perception": "lumina.perception.v1",
+    "spatial_context": "lumina.spatial.context.v1",
+    "state_reconciliation": "lumina.state.reconciliation.v1"
+  },
+  "required_imports": [
+    "lumina_next.world_state_v1",
+    "lumina_next.world_state_sources_v1",
+    "lumina_next.perception_v1",
+    "lumina_next.spatial_context_v1",
+    "lumina_next.state_reconciliation_v1"
+  ],
+  "scenario_categories": {
+    "situation_description": {
+      "minimum_cases": 10,
+      "scoring": "exact structured description fields"
+    },
+    "question_answering": {
+      "minimum_cases": 10,
+      "scoring": "exact grounded answer"
+    },
+    "change_detection": {
+      "minimum_cases": 10,
+      "scoring": "exact field/before/after/change tuple"
+    }
+  },
+  "scoring": {
+    "primary_metric": "exact scenario accuracy",
+    "minimum_total_cases": 30,
+    "world_state_accuracy_min_percent": 90.0,
+    "minimum_category_accuracy_percent": 90.0,
+    "unresolved_or_invalid_case": "FAIL_CLOSED_AND_SCORE_INCORRECT",
+    "extra_expected_answer_tolerance": "NONE"
+  },
+  "freshness": {
+    "stale_spatial_context": "FAIL_CLOSED",
+    "stale_world_event": "QUARANTINE",
+    "unresolved_reconciliation": "FAIL_CLOSED",
+    "unknown_case_or_question": "FAIL_CLOSED"
+  },
+  "determinism": {
+    "fixed_fixture_clock_required": true,
+    "repeat_count": 2,
+    "replay_hash_match_required": true
+  },
+  "required_negative_controls": [
+    "unknown_fixture_schema_rejected",
+    "duplicate_case_id_rejected",
+    "unknown_category_rejected",
+    "missing_expected_rejected",
+    "unknown_question_rejected",
+    "stale_spatial_context_quarantined",
+    "future_spatial_context_rejected",
+    "unknown_world_schema_rejected",
+    "stale_world_event_quarantined",
+    "ambiguous_reconciliation_fail_closed",
+    "golden_answer_tamper_fails_threshold"
+  ],
+  "acceptance": {
+    "world_state_accuracy_min_percent": 90.0,
+    "category_coverage_percent": 100.0,
+    "negative_control_pass_percent": 100.0,
+    "deterministic_replay_hash_match_percent": 100.0
+  },
+  "gate_target": "G2",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE",
+  "live_integration_claim": "NONE"
+}

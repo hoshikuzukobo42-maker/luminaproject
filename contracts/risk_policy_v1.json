@@ -1,0 +1,38 @@
+{
+  "contract_id": "lumina.risk.policy.v1",
+  "work_item": "P4-03",
+  "status": "ACTIVE",
+  "owner": "Safety/AI",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "request_schema": "lumina.action.request.v1",
+  "receipt_schema": "lumina.action.approval.v1",
+  "decision_schema": "lumina.action.policy.decision.v1",
+  "effect_classes": {
+    "read_public": {"risk": "LOW", "approval_required": false, "rollback_required": false},
+    "write_local_reversible": {"risk": "MEDIUM", "approval_required": false, "rollback_required": true},
+    "external_communication": {"risk": "HIGH", "approval_required": true, "rollback_required": false},
+    "delete_data": {"risk": "CRITICAL", "approval_required": true, "rollback_required": true},
+    "financial_transaction": {"risk": "CRITICAL", "approval_required": true, "rollback_required": false},
+    "privilege_change": {"risk": "CRITICAL", "approval_required": true, "rollback_required": true},
+    "sensor_capture": {"risk": "HIGH", "approval_required": true, "rollback_required": false}
+  },
+  "receipt_bindings": ["user_id", "correlation_id", "request_id", "effect_class", "target_scope", "issued_at", "expires_at", "one_time"],
+  "special_bindings": {
+    "financial_transaction": ["max_cost"],
+    "delete_data": ["confirmation_sha256"]
+  },
+  "hard_prohibited_action_types": ["bypass_safety", "credential_exfiltration", "hidden_recording", "self_modify_policy", "disable_kill_switch"],
+  "acceptance": {
+    "unsafe_action_block_percent_min": 100.0,
+    "valid_receipt_accept_percent_min": 100.0,
+    "deterministic_decision_percent_min": 100.0,
+    "minimum_adversarial_cases": 100
+  },
+  "dependencies": ["P4-01"],
+  "gate_target": "G4",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE",
+  "live_execution_claim": "NONE"
+}

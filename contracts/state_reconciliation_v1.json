@@ -1,0 +1,211 @@
+{
+  "contract_id": "lumina.state.reconciliation.v1",
+  "policy_version": "lumina.state.reconciliation.policy.v1",
+  "status": "ACTIVE",
+  "work_item": "P2-05",
+  "owner": "AI/Runtime",
+  "local_only": true,
+  "dotnet_required": false,
+  "network_required": false,
+  "dependencies": [
+    "P2-02 World State Event Bus",
+    "P2-04 Spatial Context Service"
+  ],
+  "input_schema_version": "lumina.state.claim.v1",
+  "output_schema_version": "lumina.state.reconciliation.v1",
+  "supported_sources": [
+    "godot_engine",
+    "user_action",
+    "stt_result",
+    "perception_inference"
+  ],
+  "decision_order": [
+    "validate_exact_contract",
+    "exclude_policy_or_upstream_stale",
+    "reject_newer_stale_version_fallback",
+    "select_greatest_fresh_state_version",
+    "apply_authority_profile",
+    "use_latest_observation_within_equal_authority",
+    "fail_closed_on_remaining_ambiguity"
+  ],
+  "authority_profiles": {
+    "spatial_fact": [
+      "godot_engine",
+      "user_action",
+      "stt_result",
+      "perception_inference"
+    ],
+    "user_intent": [
+      "user_action",
+      "stt_result",
+      "perception_inference",
+      "godot_engine"
+    ],
+    "speech_fact": [
+      "stt_result",
+      "user_action",
+      "perception_inference",
+      "godot_engine"
+    ],
+    "behavior_inference": [
+      "user_action",
+      "perception_inference",
+      "stt_result",
+      "godot_engine"
+    ]
+  },
+  "freshness_slo_seconds": {
+    "godot_engine": 2.0,
+    "user_action": 10.0,
+    "stt_result": 5.0,
+    "perception_inference": 2.0
+  },
+  "maximum_future_clock_skew_seconds": 2.0,
+  "conflict_matrix_semantics": {
+    "rows": "left source_kind",
+    "columns": "right source_kind",
+    "cell": "winning source_kind or FAIL_CLOSED_AMBIGUOUS",
+    "direction": "directed and input-order invariant",
+    "diagonal": "two different values from equal source authority at the same version and timestamp"
+  },
+  "conflict_matrix": {
+    "spatial_fact": {
+      "godot_engine": {
+        "godot_engine": "FAIL_CLOSED_AMBIGUOUS",
+        "user_action": "godot_engine",
+        "stt_result": "godot_engine",
+        "perception_inference": "godot_engine"
+      },
+      "user_action": {
+        "godot_engine": "godot_engine",
+        "user_action": "FAIL_CLOSED_AMBIGUOUS",
+        "stt_result": "user_action",
+        "perception_inference": "user_action"
+      },
+      "stt_result": {
+        "godot_engine": "godot_engine",
+        "user_action": "user_action",
+        "stt_result": "FAIL_CLOSED_AMBIGUOUS",
+        "perception_inference": "stt_result"
+      },
+      "perception_inference": {
+        "godot_engine": "godot_engine",
+        "user_action": "user_action",
+        "stt_result": "stt_result",
+        "perception_inference": "FAIL_CLOSED_AMBIGUOUS"
+      }
+    },
+    "user_intent": {
+      "godot_engine": {
+        "godot_engine": "FAIL_CLOSED_AMBIGUOUS",
+        "user_action": "user_action",
+        "stt_result": "stt_result",
+        "perception_inference": "perception_inference"
+      },
+      "user_action": {
+        "godot_engine": "user_action",
+        "user_action": "FAIL_CLOSED_AMBIGUOUS",
+        "stt_result": "user_action",
+        "perception_inference": "user_action"
+      },
+      "stt_result": {
+        "godot_engine": "stt_result",
+        "user_action": "user_action",
+        "stt_result": "FAIL_CLOSED_AMBIGUOUS",
+        "perception_inference": "stt_result"
+      },
+      "perception_inference": {
+        "godot_engine": "perception_inference",
+        "user_action": "user_action",
+        "stt_result": "stt_result",
+        "perception_inference": "FAIL_CLOSED_AMBIGUOUS"
+      }
+    },
+    "speech_fact": {
+      "godot_engine": {
+        "godot_engine": "FAIL_CLOSED_AMBIGUOUS",
+        "user_action": "user_action",
+        "stt_result": "stt_result",
+        "perception_inference": "perception_inference"
+      },
+      "user_action": {
+        "godot_engine": "user_action",
+        "user_action": "FAIL_CLOSED_AMBIGUOUS",
+        "stt_result": "stt_result",
+        "perception_inference": "user_action"
+      },
+      "stt_result": {
+        "godot_engine": "stt_result",
+        "user_action": "stt_result",
+        "stt_result": "FAIL_CLOSED_AMBIGUOUS",
+        "perception_inference": "stt_result"
+      },
+      "perception_inference": {
+        "godot_engine": "perception_inference",
+        "user_action": "user_action",
+        "stt_result": "stt_result",
+        "perception_inference": "FAIL_CLOSED_AMBIGUOUS"
+      }
+    },
+    "behavior_inference": {
+      "godot_engine": {
+        "godot_engine": "FAIL_CLOSED_AMBIGUOUS",
+        "user_action": "user_action",
+        "stt_result": "stt_result",
+        "perception_inference": "perception_inference"
+      },
+      "user_action": {
+        "godot_engine": "user_action",
+        "user_action": "FAIL_CLOSED_AMBIGUOUS",
+        "stt_result": "user_action",
+        "perception_inference": "user_action"
+      },
+      "stt_result": {
+        "godot_engine": "stt_result",
+        "user_action": "user_action",
+        "stt_result": "FAIL_CLOSED_AMBIGUOUS",
+        "perception_inference": "perception_inference"
+      },
+      "perception_inference": {
+        "godot_engine": "perception_inference",
+        "user_action": "user_action",
+        "stt_result": "perception_inference",
+        "perception_inference": "FAIL_CLOSED_AMBIGUOUS"
+      }
+    }
+  },
+  "fail_closed": {
+    "unknown_schema_source_or_profile": "REJECT_WITHOUT_PROJECTION",
+    "future_timestamp_beyond_skew": "REJECT_WITHOUT_PROJECTION",
+    "all_claims_stale": "NO_CURRENT_STATE",
+    "newer_version_stale": "NO_FALLBACK_TO_OLDER_VERSION",
+    "authority_profile_conflict": "NO_CURRENT_STATE",
+    "equal_authority_same_time_conflict": "NO_CURRENT_STATE",
+    "temporal_rollback": "QUARANTINE_WITHOUT_PROJECTION_REPLACEMENT",
+    "stored_projection_becomes_stale": "EVICT_BEFORE_READ"
+  },
+  "acceptance": {
+    "explicit_directed_conflict_matrix_cells": 64,
+    "matrix_decision_accuracy_percent": 100.0,
+    "off_diagonal_resolved_cells": 48,
+    "diagonal_fail_closed_cells": 16,
+    "stale_selected_max": 0,
+    "required_negative_controls": [
+      "stale_high_authority_excluded",
+      "all_stale_fail_closed",
+      "newer_stale_version_blocks_old_fallback",
+      "unknown_source_rejected",
+      "unknown_profile_rejected",
+      "unknown_schema_rejected",
+      "future_claim_rejected",
+      "profile_conflict_fail_closed",
+      "temporal_rollback_quarantined",
+      "stale_projection_evicted_before_read",
+      "input_order_invariant"
+    ]
+  },
+  "gate_target": "G2",
+  "gate_claim": "NONE",
+  "human_review_claim": "NONE",
+  "live_integration_claim": "NONE"
+}

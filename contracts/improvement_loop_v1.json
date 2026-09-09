@@ -1,0 +1,50 @@
+{
+  "contract_id": "lumina.improvement.loop.v1",
+  "work_item": "P8-04",
+  "status": "ACTIVE_LOCAL_REFERENCE",
+  "owner": "PM/AI/QA",
+  "standard_python_only": true,
+  "network_required": false,
+  "dotnet_or_mono_required": false,
+  "change_types": ["MODEL", "PERSONA", "BEHAVIOR"],
+  "required_stages": ["INGEST_EVIDENCE", "IDENTIFY_KPI_GAP", "DESIGN_CHANGE", "RISK_REVIEW", "CANARY_PLAN", "ROLLBACK_PLAN", "DECISION"],
+  "dependencies": {
+    "p8_02_status": "LOCAL_MONITORING_READY",
+    "p8_03_status": "LOCAL_PLAYBOOK_READY",
+    "g8_status": "NOT_APPROVED"
+  },
+  "acceptance": {
+    "quarters_min": 4,
+    "change_records_min": 120,
+    "change_types_covered_min": 3,
+    "kpi_link_percent_min": 100.0,
+    "evidence_link_percent_min": 100.0,
+    "rollback_link_percent_min": 100.0,
+    "owner_link_percent_min": 100.0,
+    "change_traceability_percent_min": 100.0,
+    "negative_controls_percent_min": 100.0,
+    "production_changes_applied_max": 0,
+    "production_log_reads_max": 0,
+    "external_contacts_executed_max": 0,
+    "gate_claim": "NONE"
+  },
+  "wbs_promotion_policy": {
+    "local_mechanical_candidate_allowed": true,
+    "formal_wbs_promotion_allowed": false,
+    "blocked_by": [
+      "P8-02/P8-03 formal completion",
+      "production usage/evaluation evidence",
+      "quarterly human review",
+      "real canary and rollback rehearsal",
+      "G8 independent approval"
+    ]
+  },
+  "non_claims": [
+    "production log use",
+    "production change",
+    "human quarterly review",
+    "real canary",
+    "G8 approval",
+    "formal WBS promotion"
+  ]
+}

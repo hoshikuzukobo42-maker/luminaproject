@@ -1,0 +1,58 @@
+{
+  "contract_id": "lumina.spatial.context.v1",
+  "status": "ACTIVE",
+  "owner": "XR Runtime",
+  "local_only": true,
+  "dotnet_required": false,
+  "input": {
+    "schema_version": "1.0",
+    "source": "godot_engine",
+    "authority_required": {
+      "geometry": "godot_engine",
+      "visibility": "godot_engine",
+      "navigation": "godot_engine",
+      "vlm_may_override_geometry": false
+    },
+    "upstream_event_owner": "P2-02 World State Event Bus"
+  },
+  "output_schema_version": "lumina.spatial.context.v1",
+  "fact_domains": [
+    "room_and_zone",
+    "player_and_lumina_position",
+    "destination_reachability",
+    "interactable_transform",
+    "visibility_and_occlusion_evidence"
+  ],
+  "derived_domains": [
+    "visitor_proximity_band",
+    "object_proximity_band",
+    "seat_candidate"
+  ],
+  "fail_closed": {
+    "unknown_schema": "REJECT",
+    "non_engine_geometry_authority": "REJECT",
+    "invalid_upstream_snapshot": "REJECT",
+    "stale_snapshot": "QUARANTINE_WITHOUT_PROJECTION_REPLACEMENT",
+    "occlusion_not_checked": "UNKNOWN",
+    "inferred_seat_without_explicit_metadata": "NOT_ACTIONABLE"
+  },
+  "freshness": {
+    "slo_seconds": 2.0,
+    "metric": "nearest-rank p95 of observation-to-ingest age",
+    "maximum_future_clock_skew_seconds": 2.0
+  },
+  "acceptance": {
+    "minimum_replay_cases": 100,
+    "required_case_domains": [
+      "proximity",
+      "destination",
+      "visibility_occlusion",
+      "seat"
+    ],
+    "freshness_p95_max_seconds": 2.0,
+    "accepted_case_rate_percent": 100,
+    "unchecked_occlusion_claimed_clear_max": 0,
+    "deterministic_replay_hash_match_percent": 100
+  },
+  "gate_claim": "NONE"
+}
