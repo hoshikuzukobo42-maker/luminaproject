@@ -1,0 +1,51 @@
+extends RefCounted
+class_name LuminaPresenceStates
+
+## Canonical presence FSM states for co-presence behaviors.
+
+const IDLE_PRIVATE := "IDLE_PRIVATE"
+const NOTICE_PLAYER := "NOTICE_PLAYER"
+const GREET_AT_LOBBY := "GREET_AT_LOBBY"
+const WALK_WITH_PLAYER := "WALK_WITH_PLAYER"
+const GUIDE_TO_ROOM := "GUIDE_TO_ROOM"
+const INVITE_TO_VIEW := "INVITE_TO_VIEW"
+const SHARED_GAZE := "SHARED_GAZE"
+const SIT_TOGETHER := "SIT_TOGETHER"
+const CONVERSATION := "CONVERSATION"
+const QUIET_COMPANIONSHIP := "QUIET_COMPANIONSHIP"
+const FAREWELL := "FAREWELL"
+const RECOVER_FROM_STUCK := "RECOVER_FROM_STUCK"
+const DIRECTED_MOVE := "DIRECTED_MOVE"
+
+const ALL: PackedStringArray = [
+	IDLE_PRIVATE,
+	NOTICE_PLAYER,
+	GREET_AT_LOBBY,
+	WALK_WITH_PLAYER,
+	GUIDE_TO_ROOM,
+	INVITE_TO_VIEW,
+	SHARED_GAZE,
+	SIT_TOGETHER,
+	CONVERSATION,
+	QUIET_COMPANIONSHIP,
+	FAREWELL,
+	RECOVER_FROM_STUCK,
+	DIRECTED_MOVE,
+]
+
+
+static func is_valid(state: String) -> bool:
+	return state in ALL
+
+
+static func is_locomotion(state: String) -> bool:
+	return state in [
+		GREET_AT_LOBBY,
+		WALK_WITH_PLAYER,
+		GUIDE_TO_ROOM,
+		INVITE_TO_VIEW,
+		SIT_TOGETHER,
+		FAREWELL,
+		RECOVER_FROM_STUCK,
+		DIRECTED_MOVE,
+	]
