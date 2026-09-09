@@ -1,0 +1,1805 @@
+{
+  "snapshot_date": "2026-09-10",
+  "kind": "selected-source-viewing-snapshot-not-full-runtime",
+  "source_files": [
+    {
+      "path": "contracts/autonomy_orchestrator_v1.json",
+      "bytes": 1516,
+      "source_sha256": "80b301a21d3ebbf6562acc8b8bc118756f9e8edc0cfee88e874c081db766ff2c",
+      "public_sha256": "80b301a21d3ebbf6562acc8b8bc118756f9e8edc0cfee88e874c081db766ff2c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/autonomy_watchdog_v1.json",
+      "bytes": 1079,
+      "source_sha256": "45c0bf9f37b8055e866ba62f41508a087b313448e69c5be7b153730c36e7d5d2",
+      "public_sha256": "45c0bf9f37b8055e866ba62f41508a087b313448e69c5be7b153730c36e7d5d2",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/beta_cohort_protocol_v1.json",
+      "bytes": 2999,
+      "source_sha256": "21bfa43d0b300dae7d093de1fea67c9e52cb751e28120d65425709ced37345c6",
+      "public_sha256": "21bfa43d0b300dae7d093de1fea67c9e52cb751e28120d65425709ced37345c6",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/beta_decision_memo_v1.json",
+      "bytes": 2676,
+      "source_sha256": "4f7a3ce1343bc82b337a821b94e7d27e53642e64b0c8dfea313ae8cec6705a39",
+      "public_sha256": "4f7a3ce1343bc82b337a821b94e7d27e53642e64b0c8dfea313ae8cec6705a39",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/beta_telemetry_privacy_v1.json",
+      "bytes": 2073,
+      "source_sha256": "63f91c4bfd2ed1c1e0a28ea2e14d954b01777d7c125081d54e10b6e45857849b",
+      "public_sha256": "63f91c4bfd2ed1c1e0a28ea2e14d954b01777d7c125081d54e10b6e45857849b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/community_safety_v1.json",
+      "bytes": 4191,
+      "source_sha256": "218680c4d9905d712aded18b886fde5bc9e7c378d739d03a714cc48a4431fc49",
+      "public_sha256": "218680c4d9905d712aded18b886fde5bc9e7c378d739d03a714cc48a4431fc49",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/embodied_action_api_v1.json",
+      "bytes": 3623,
+      "source_sha256": "86eae0dd6fa93031a1ac090c3ae8054f8a3e6edfda31e12d1c30d9c4ec9d0b96",
+      "public_sha256": "86eae0dd6fa93031a1ac090c3ae8054f8a3e6edfda31e12d1c30d9c4ec9d0b96",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/g5_embodied_review_pack_v1.json",
+      "bytes": 1645,
+      "source_sha256": "3f817ef8625ffee587b64477c2b4e1ab28970248dbcfad9124a2879ed1576e9e",
+      "public_sha256": "3f817ef8625ffee587b64477c2b4e1ab28970248dbcfad9124a2879ed1576e9e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/g6_independent_review_pack_v1.json",
+      "bytes": 3284,
+      "source_sha256": "71380c79f108a5edebfe4a36dee9ecda69464287730280fcdc1e1830c074ada9",
+      "public_sha256": "71380c79f108a5edebfe4a36dee9ecda69464287730280fcdc1e1830c074ada9",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/g7_independent_review_pack_v1.json",
+      "bytes": 2327,
+      "source_sha256": "823a1a311d821a2e20d8d366566e70ed8068bc66c28daa5742b746df7f7c0f0d",
+      "public_sha256": "823a1a311d821a2e20d8d366566e70ed8068bc66c28daa5742b746df7f7c0f0d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/g8_release_review_pack_v1.json",
+      "bytes": 1580,
+      "source_sha256": "94ae595a21bfa506b0e0e0663444d58bbf100028771b314ef86661c6f86e862b",
+      "public_sha256": "94ae595a21bfa506b0e0e0663444d58bbf100028771b314ef86661c6f86e862b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/goal_intent_model_v1.json",
+      "bytes": 2324,
+      "source_sha256": "ed90736e15f1f360acd89911478e7f4dcfec336e2bc2cf479bb22cc4e6bbfbd2",
+      "public_sha256": "ed90736e15f1f360acd89911478e7f4dcfec336e2bc2cf479bb22cc4e6bbfbd2",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/improvement_loop_v1.json",
+      "bytes": 1577,
+      "source_sha256": "4d51264ac9ef9478245ca8e62ab12fe1b99456c125a6b9a796c800ed89fd4daa",
+      "public_sha256": "4d51264ac9ef9478245ca8e62ab12fe1b99456c125a6b9a796c800ed89fd4daa",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/incident_playbook_v1.json",
+      "bytes": 1704,
+      "source_sha256": "17259f827108a29fd6460f03b13ef388c4f2ca414f83d2417fc6ea9ff6b03be6",
+      "public_sha256": "17259f827108a29fd6460f03b13ef388c4f2ca414f83d2417fc6ea9ff6b03be6",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/longitudinal_beta_eval_v1.json",
+      "bytes": 2121,
+      "source_sha256": "93a5261a6b7f3f007070395b59b1517833e6f4f9059a1dc015f2c62e5ff8dde1",
+      "public_sha256": "93a5261a6b7f3f007070395b59b1517833e6f4f9059a1dc015f2c62e5ff8dde1",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/longitudinal_memory_eval_v1.json",
+      "bytes": 3244,
+      "source_sha256": "aed2a5bc67259b572be47bc5f9a86b5076c4f05cd07ab44aede7a6e4d0568410",
+      "public_sha256": "aed2a5bc67259b572be47bc5f9a86b5076c4f05cd07ab44aede7a6e4d0568410",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/memory_architecture_v1.json",
+      "bytes": 6065,
+      "source_sha256": "9ca0c04137c5abe967bf93839ce6859297040b55cccc2f00115a62b74d42a1e5",
+      "public_sha256": "9ca0c04137c5abe967bf93839ce6859297040b55cccc2f00115a62b74d42a1e5",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/memory_consent_v1.json",
+      "bytes": 1116,
+      "source_sha256": "e8e5b7b482d60961ef94935a3268bbf6f337a839410f9b601cf387dbe102948e",
+      "public_sha256": "e8e5b7b482d60961ef94935a3268bbf6f337a839410f9b601cf387dbe102948e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/memory_control_service_v1.json",
+      "bytes": 929,
+      "source_sha256": "6788a5e9a0026708017048f0a059d5c0c0bf811964e7ff23a6d6d3ba85d3a42d",
+      "public_sha256": "6788a5e9a0026708017048f0a059d5c0c0bf811964e7ff23a6d6d3ba85d3a42d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/memory_repair_v1.json",
+      "bytes": 4239,
+      "source_sha256": "d4e870a84fe8b01dcc84706b49383dfab742903e22f0ad1c204ace6bd27b33ab",
+      "public_sha256": "d4e870a84fe8b01dcc84706b49383dfab742903e22f0ad1c204ace6bd27b33ab",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/memory_retrieval_v1.json",
+      "bytes": 598,
+      "source_sha256": "9bdaaa7664a25353eb73ed8fde97472a83294d41e680ca7ccee7b934dcf249c5",
+      "public_sha256": "9bdaaa7664a25353eb73ed8fde97472a83294d41e680ca7ccee7b934dcf249c5",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/motion_semantics_v1.json",
+      "bytes": 3714,
+      "source_sha256": "5a527c687a553f624c71aba3974600808f345f7c5e2589a6332d0697445c1bef",
+      "public_sha256": "5a527c687a553f624c71aba3974600808f345f7c5e2589a6332d0697445c1bef",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/multi_user_identity_v1.json",
+      "bytes": 3528,
+      "source_sha256": "3a1dc03e4e85599a395e3f00be298b40952c7e0830f3df0a0e376d552165ebc5",
+      "public_sha256": "3a1dc03e4e85599a395e3f00be298b40952c7e0830f3df0a0e376d552165ebc5",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/perception_v1.json",
+      "bytes": 701,
+      "source_sha256": "a1c36f3249cebd1a7d30cb7977ee0c5014f8991c066859832e3a64bc871e2644",
+      "public_sha256": "a1c36f3249cebd1a7d30cb7977ee0c5014f8991c066859832e3a64bc871e2644",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/permission_modes_v1.json",
+      "bytes": 1111,
+      "source_sha256": "cb5c5a1f4b455179d11611e94eb2bf59ef121030e65462bb784621f3c6ea5b2f",
+      "public_sha256": "cb5c5a1f4b455179d11611e94eb2bf59ef121030e65462bb784621f3c6ea5b2f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/presence_evaluation_v1.json",
+      "bytes": 3353,
+      "source_sha256": "259d500bf7ee83d91565e0077c7f36afa4171ad1d6f5be97601078ac2bd38992",
+      "public_sha256": "259d500bf7ee83d91565e0077c7f36afa4171ad1d6f5be97601078ac2bd38992",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/proactive_trigger_v1.json",
+      "bytes": 3851,
+      "source_sha256": "52478624cc6fba7d0a8b2917ddc0530ca2cafb2cb835efba501d236d8f083e50",
+      "public_sha256": "52478624cc6fba7d0a8b2917ddc0530ca2cafb2cb835efba501d236d8f083e50",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/proxemics_rules_v1.json",
+      "bytes": 3331,
+      "source_sha256": "76171c0d909882bafcf5a55b345b87d864412b94499a6d968e9ebc3735ff84dd",
+      "public_sha256": "76171c0d909882bafcf5a55b345b87d864412b94499a6d968e9ebc3735ff84dd",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/quality_triage_v1.json",
+      "bytes": 3851,
+      "source_sha256": "9cf5e3c7eb68a2abec3d346f7f02a25ec2657cd5a10852dfa1206d32d7ae8214",
+      "public_sha256": "9cf5e3c7eb68a2abec3d346f7f02a25ec2657cd5a10852dfa1206d32d7ae8214",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/relationship_model_v1.json",
+      "bytes": 3947,
+      "source_sha256": "38b25d1074a49dc205c523df74d65d9e503f2671cd56dfb0a81845d4075d3f71",
+      "public_sha256": "38b25d1074a49dc205c523df74d65d9e503f2671cd56dfb0a81845d4075d3f71",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/release_engineering_v1.json",
+      "bytes": 1600,
+      "source_sha256": "73b22cbd234b87de9cf6744c5b0809853703cdc6c1f7afd175d840cae65f45fc",
+      "public_sha256": "73b22cbd234b87de9cf6744c5b0809853703cdc6c1f7afd175d840cae65f45fc",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/release_gate_spec_v1.json",
+      "bytes": 1055,
+      "source_sha256": "34d8a9b893b8586c12329c737b508ab1fda40a584390aca7bd8bfcd883f30153",
+      "public_sha256": "34d8a9b893b8586c12329c737b508ab1fda40a584390aca7bd8bfcd883f30153",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/risk_policy_v1.json",
+      "bytes": 1812,
+      "source_sha256": "203bce8f69eed96e17ed66d50847d14d919e1c0b162739d3f1e7c7270f3fc3e6",
+      "public_sha256": "203bce8f69eed96e17ed66d50847d14d919e1c0b162739d3f1e7c7270f3fc3e6",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/role_packs_v1.json",
+      "bytes": 4226,
+      "source_sha256": "38dbf6e6d93dd220b13e1d357bb0bf1b3f9bd51545eb61f5a6c5a55d973536cb",
+      "public_sha256": "38dbf6e6d93dd220b13e1d357bb0bf1b3f9bd51545eb61f5a6c5a55d973536cb",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/slo_monitoring_v1.json",
+      "bytes": 1579,
+      "source_sha256": "fd87b481b0ff9da74d3ef4382de52288fd21d6141914568c74be7d5dbc311b51",
+      "public_sha256": "fd87b481b0ff9da74d3ef4382de52288fd21d6141914568c74be7d5dbc311b51",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/social_interaction_protocol_v1.json",
+      "bytes": 3412,
+      "source_sha256": "7e95baa089fd0fc45722c73e4237a1add151508224a4d9bb40349ba12aa3884e",
+      "public_sha256": "7e95baa089fd0fc45722c73e4237a1add151508224a4d9bb40349ba12aa3884e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/spatial_context_v1.json",
+      "bytes": 1657,
+      "source_sha256": "48ce9058b31c5db7e7e35c780acc24927de4993a385144cae6b3e0373b58255e",
+      "public_sha256": "48ce9058b31c5db7e7e35c780acc24927de4993a385144cae6b3e0373b58255e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/spatial_navigation_v1.json",
+      "bytes": 3023,
+      "source_sha256": "2a4ec067d373a4ca0b2a13a072f2558167a3f1c4e7611dff308dc6eb34d17160",
+      "public_sha256": "2a4ec067d373a4ca0b2a13a072f2558167a3f1c4e7611dff308dc6eb34d17160",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/state_reconciliation_v1.json",
+      "bytes": 6687,
+      "source_sha256": "829f6e0ebce455b642aa4b0ca3a6ace60c423eec3155fde571177e5149f5282c",
+      "public_sha256": "829f6e0ebce455b642aa4b0ca3a6ace60c423eec3155fde571177e5149f5282c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/world_state_v1.json",
+      "bytes": 1739,
+      "source_sha256": "2744f8ea30f477e56daee1c640ba789d1c163ba81b31743c7c324b76e66484ba",
+      "public_sha256": "2744f8ea30f477e56daee1c640ba789d1c163ba81b31743c7c324b76e66484ba",
+      "local_path_redacted": false
+    },
+    {
+      "path": "contracts/world_understanding_eval_v1.json",
+      "bytes": 2642,
+      "source_sha256": "4c4e676cc951e6d7adc120b72ac28de142c55a95ecd5db0427e590639ec93913",
+      "public_sha256": "4c4e676cc951e6d7adc120b72ac28de142c55a95ecd5db0427e590639ec93913",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/demo_main.gd",
+      "bytes": 241823,
+      "source_sha256": "28595067cf9e32ccc9d26a0d435be199d6b6cf1c40e47a98dfde79a3811c7c75",
+      "public_sha256": "28595067cf9e32ccc9d26a0d435be199d6b6cf1c40e47a98dfde79a3811c7c75",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_action_adapter.gd",
+      "bytes": 25318,
+      "source_sha256": "f140a373222d02f83ae4bc2c547226e7e229c92dd5fb333c5de655abd096dc5f",
+      "public_sha256": "f140a373222d02f83ae4bc2c547226e7e229c92dd5fb333c5de655abd096dc5f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_affordance_controller.gd",
+      "bytes": 6755,
+      "source_sha256": "97adc65ec6c2c1370e81673946644bc75459055a4e9d523df28ab66ea8ffe898",
+      "public_sha256": "97adc65ec6c2c1370e81673946644bc75459055a4e9d523df28ab66ea8ffe898",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_audio_status_client.gd",
+      "bytes": 5128,
+      "source_sha256": "fd756ffb2c4dfe7e8e08ee459e711c2110df116b809dcd2e9453646761c2c684",
+      "public_sha256": "fd756ffb2c4dfe7e8e08ee459e711c2110df116b809dcd2e9453646761c2c684",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_authority.gd",
+      "bytes": 3849,
+      "source_sha256": "4df04740c5fec672c8faf698dfd4ed63eea2d229a2ee7acec87bd6ff711aa94d",
+      "public_sha256": "4df04740c5fec672c8faf698dfd4ed63eea2d229a2ee7acec87bd6ff711aa94d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_backend_client.gd",
+      "bytes": 5294,
+      "source_sha256": "16066d35819c52bab11588ca26e6e41293e2dc2e30477221362bb09a5d83ac20",
+      "public_sha256": "16066d35819c52bab11588ca26e6e41293e2dc2e30477221362bb09a5d83ac20",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_behavior_controller.gd",
+      "bytes": 9267,
+      "source_sha256": "86655a86406bbf829d8305c4c3cf42e7bd5cfd26368141dc8deeefc17a926044",
+      "public_sha256": "86655a86406bbf829d8305c4c3cf42e7bd5cfd26368141dc8deeefc17a926044",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_face_controller.gd",
+      "bytes": 12199,
+      "source_sha256": "6452692ceed60a85500d78531cd4e70c4850f7f888893735d8b40158e327a13c",
+      "public_sha256": "6452692ceed60a85500d78531cd4e70c4850f7f888893735d8b40158e327a13c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_gaze_controller.gd",
+      "bytes": 1958,
+      "source_sha256": "fef11c8252c2332717c256e2e8e5415e1067be11f807835a056edf9625931111",
+      "public_sha256": "fef11c8252c2332717c256e2e8e5415e1067be11f807835a056edf9625931111",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_interactive_trial.gd",
+      "bytes": 55356,
+      "source_sha256": "eb6792252b7bfda2aa9d77101a5c073b36e90d020b74c51c0c62ab2ceb8df007",
+      "public_sha256": "eb6792252b7bfda2aa9d77101a5c073b36e90d020b74c51c0c62ab2ceb8df007",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_navigation_controller.gd",
+      "bytes": 4785,
+      "source_sha256": "ce9eba039361044c2506e6c2aafa1799c6eedf81f5cdda3d77b9c2790b5e1284",
+      "public_sha256": "ce9eba039361044c2506e6c2aafa1799c6eedf81f5cdda3d77b9c2790b5e1284",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_openxr_input.gd",
+      "bytes": 3329,
+      "source_sha256": "aefcb218e0c25e290effd5c4336d852eb56d8ca3d47f9e646715e2db5187b34c",
+      "public_sha256": "aefcb218e0c25e290effd5c4336d852eb56d8ca3d47f9e646715e2db5187b34c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_plan_executor.gd",
+      "bytes": 5265,
+      "source_sha256": "9bde2b2ceaee7b47ba4c3590560688fe1d7e20a66ba11ab71a4334aaa3028dd9",
+      "public_sha256": "9bde2b2ceaee7b47ba4c3590560688fe1d7e20a66ba11ab71a4334aaa3028dd9",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_reflex_controller.gd",
+      "bytes": 2565,
+      "source_sha256": "9a9b342e9c83584e15617d6582b278621abb1379d1dd1b10a6f70eb136cd9e0b",
+      "public_sha256": "9a9b342e9c83584e15617d6582b278621abb1379d1dd1b10a6f70eb136cd9e0b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_room_demo.gd",
+      "bytes": 19534,
+      "source_sha256": "23d33a9ad57aed227111ba6ce26cc127593117668aa86626ad5fe3f3be82f065",
+      "public_sha256": "de4b145d8fc892be200b78ef26e5e18632bfbda0889c99ee4059afc0ad8fc220",
+      "local_path_redacted": true
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_runtime.gd",
+      "bytes": 17357,
+      "source_sha256": "658c916281ca90acc57be323f93147dcdf307bb9c1c0d9fdba54eb7f6a007999",
+      "public_sha256": "658c916281ca90acc57be323f93147dcdf307bb9c1c0d9fdba54eb7f6a007999",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_touch_classifier.gd",
+      "bytes": 4156,
+      "source_sha256": "2028ce4cdbd22a9bfde3923c477c29f4c50b44ee13d1e6fb9f87efd9c0328f00",
+      "public_sha256": "2028ce4cdbd22a9bfde3923c477c29f4c50b44ee13d1e6fb9f87efd9c0328f00",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_tracking_gateway.gd",
+      "bytes": 10667,
+      "source_sha256": "33f49e9c36f487f603c02db05470e2342722dd66b0945a4fb9d5af08a559c1e0",
+      "public_sha256": "33f49e9c36f487f603c02db05470e2342722dd66b0945a4fb9d5af08a559c1e0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_trial_host.gd",
+      "bytes": 3709,
+      "source_sha256": "1491d292569cf6f03b13805ea41fd783f549504cae81f5bc8fbf16f77b66688a",
+      "public_sha256": "1491d292569cf6f03b13805ea41fd783f549504cae81f5bc8fbf16f77b66688a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_vmc_input.gd",
+      "bytes": 5911,
+      "source_sha256": "84a3c063c32a27412b01a312bacac69f9f38601dde2de84866389fef6fd83814",
+      "public_sha256": "84a3c063c32a27412b01a312bacac69f9f38601dde2de84866389fef6fd83814",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_voice_player.gd",
+      "bytes": 7838,
+      "source_sha256": "b4645f46cf6889372b2041bc6dec7bc4fc42b74e1c2c26f0ad0cf3788a8a8125",
+      "public_sha256": "b4645f46cf6889372b2041bc6dec7bc4fc42b74e1c2c26f0ad0cf3788a8a8125",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/embodied_webcam_hand_input.gd",
+      "bytes": 6671,
+      "source_sha256": "3abd4a8cbfa35e29c7cea258aa96916a4b5851ce0e818717b40c2657bd65a77b",
+      "public_sha256": "3abd4a8cbfa35e29c7cea258aa96916a4b5851ce0e818717b40c2657bd65a77b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/tests/test_embodied_audio_status_client.gd",
+      "bytes": 3575,
+      "source_sha256": "bc96373b4628e5b859bfd1e274e29e8d947d16d6565543dd4f60828a740f29e3",
+      "public_sha256": "bc96373b4628e5b859bfd1e274e29e8d947d16d6565543dd4f60828a740f29e3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/embodied_v1/tests/test_embodied_physical_voice_ui.gd",
+      "bytes": 2391,
+      "source_sha256": "680e48086f0e2c7a0f6f7807010c6bc5dfebbedbc0a05efc11f7de5d24f06fc2",
+      "public_sha256": "680e48086f0e2c7a0f6f7807010c6bc5dfebbedbc0a05efc11f7de5d24f06fc2",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/future_room_v007_glb_loader.gd",
+      "bytes": 13516,
+      "source_sha256": "a7290b844d9362ad6e6888b89377e3ab556dade8ad4aa946619dae967319f1e9",
+      "public_sha256": "a7290b844d9362ad6e6888b89377e3ab556dade8ad4aa946619dae967319f1e9",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/future_room_v007_preview.gd",
+      "bytes": 10505,
+      "source_sha256": "933bede3f9b5620d68bce3c922189a652345f7f5e710d28681dc27ebc7d15d00",
+      "public_sha256": "933bede3f9b5620d68bce3c922189a652345f7f5e710d28681dc27ebc7d15d00",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/future_room_v008_glb_loader.gd",
+      "bytes": 17415,
+      "source_sha256": "822366db7f4415b08f0161e6ef873ce165985167ad519013b1b6894681ec7a25",
+      "public_sha256": "822366db7f4415b08f0161e6ef873ce165985167ad519013b1b6894681ec7a25",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_audio.gd",
+      "bytes": 10308,
+      "source_sha256": "36ff41e563a3d352f41c56a11bdcc76d1b458a156243b8b19fc1ae33771d993f",
+      "public_sha256": "36ff41e563a3d352f41c56a11bdcc76d1b458a156243b8b19fc1ae33771d993f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_bridge_host.gd",
+      "bytes": 16382,
+      "source_sha256": "f72df0983ee6034f5614e19d1353532fb4196b2e6f75eddd2d918ab160133571",
+      "public_sha256": "f72df0983ee6034f5614e19d1353532fb4196b2e6f75eddd2d918ab160133571",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_camera_bridge.gd",
+      "bytes": 8867,
+      "source_sha256": "8f387c9c6da44d58819eccfc18d05cc2e79e121121613e4d794d4f59aee6e583",
+      "public_sha256": "8f387c9c6da44d58819eccfc18d05cc2e79e121121613e4d794d4f59aee6e583",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_integration.gd",
+      "bytes": 68391,
+      "source_sha256": "d6a326a0ca6f07644be829191126841becc4cfec747067aa98f8a4ae68606411",
+      "public_sha256": "d6a326a0ca6f07644be829191126841becc4cfec747067aa98f8a4ae68606411",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_interactable.gd",
+      "bytes": 3954,
+      "source_sha256": "9045a2cba78f436069b00163b4ea5fff3558cc6c4a3dccf0b37e42c9d061280d",
+      "public_sha256": "9045a2cba78f436069b00163b4ea5fff3558cc6c4a3dccf0b37e42c9d061280d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_interaction_ray.gd",
+      "bytes": 4426,
+      "source_sha256": "275e24357a137be341b6d3b38c76c84dcdc733c17c78968546b0405377c4c8cd",
+      "public_sha256": "275e24357a137be341b6d3b38c76c84dcdc733c17c78968546b0405377c4c8cd",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_memory_bridge.gd",
+      "bytes": 1647,
+      "source_sha256": "88d624affdd3617ea0239d74e0bf1b8991f15b9e4e0ff81b3f2b6d2b4d03348a",
+      "public_sha256": "88d624affdd3617ea0239d74e0bf1b8991f15b9e4e0ff81b3f2b6d2b4d03348a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_motion_controller.gd",
+      "bytes": 14016,
+      "source_sha256": "063186dd926da5d9ffe0a2288ebf12768e97614291862bb5409851a5a92498cf",
+      "public_sha256": "063186dd926da5d9ffe0a2288ebf12768e97614291862bb5409851a5a92498cf",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_hub_save.gd",
+      "bytes": 6399,
+      "source_sha256": "8f2626cbb2f7d5f9e33ffa0d65a395171757d506c4c6d35e4fe54b5c6fe7ba0d",
+      "public_sha256": "8f2626cbb2f7d5f9e33ffa0d65a395171757d506c4c6d35e4fe54b5c6fe7ba0d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/living_hub/lumina_living_space_experience.gd",
+      "bytes": 10255,
+      "source_sha256": "fc9bd8c7ef955b53c704a5e53d1adf5516b9fc9895b07eae41599b12c15df77f",
+      "public_sha256": "fc9bd8c7ef955b53c704a5e53d1adf5516b9fc9895b07eae41599b12c15df77f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_animation_fixed_smoke.gd",
+      "bytes": 2031,
+      "source_sha256": "d7640e9208b730dd66f669bf0107ab11ff55d4fc1fabad96f8a16ac7bf21a720",
+      "public_sha256": "d7640e9208b730dd66f669bf0107ab11ff55d4fc1fabad96f8a16ac7bf21a720",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_animation_preview.gd",
+      "bytes": 28559,
+      "source_sha256": "7a5fcb29831ec7c1d01ef377048ab7365e9b630bcc5dc88ff06d48d450c40ef1",
+      "public_sha256": "7a5fcb29831ec7c1d01ef377048ab7365e9b630bcc5dc88ff06d48d450c40ef1",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_animation_preview_original_material.gd",
+      "bytes": 14666,
+      "source_sha256": "08ab2e84b7bf2d378745340c6112e2787dc05a024cad3b8b370d17ea47f5f999",
+      "public_sha256": "08ab2e84b7bf2d378745340c6112e2787dc05a024cad3b8b370d17ea47f5f999",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_observatory_lobby_v1.gd",
+      "bytes": 23509,
+      "source_sha256": "ed37cbf988c9364a3d139f31dedd06f42071559701067f500d9bad49d905d1f1",
+      "public_sha256": "ed37cbf988c9364a3d139f31dedd06f42071559701067f500d9bad49d905d1f1",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_walkable_player_controller.gd",
+      "bytes": 7540,
+      "source_sha256": "b3eb2b5216b816f5aea11ffc15b2c32daebd01e4cc203d50fa039b4e56b725c4",
+      "public_sha256": "b3eb2b5216b816f5aea11ffc15b2c32daebd01e4cc203d50fa039b4e56b725c4",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_walkable_room_pbr_v3.gd",
+      "bytes": 8656,
+      "source_sha256": "fd0445364ada355bfcbf7947dfd554b647829cc615ab5a526218c8dbcc593d2d",
+      "public_sha256": "fd0445364ada355bfcbf7947dfd554b647829cc615ab5a526218c8dbcc593d2d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_walkable_room_v1.gd",
+      "bytes": 16957,
+      "source_sha256": "0e6ca9a9cc222f47d80fec518e0cb3ff4c99b9622a7a9bc7ecca88aaa921299c",
+      "public_sha256": "0e6ca9a9cc222f47d80fec518e0cb3ff4c99b9622a7a9bc7ecca88aaa921299c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_world_liveness_v5.gd",
+      "bytes": 13498,
+      "source_sha256": "ec1f51693419d207fc1dd983807b7a36a8d9c90726872b93f4696e218c623926",
+      "public_sha256": "ec1f51693419d207fc1dd983807b7a36a8d9c90726872b93f4696e218c623926",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/lumina_world_telemetry.gd",
+      "bytes": 15656,
+      "source_sha256": "de1d6634a793272ecc56eec81b0c3aeeea0fecf69e65a5020e69a93065563965",
+      "public_sha256": "de1d6634a793272ecc56eec81b0c3aeeea0fecf69e65a5020e69a93065563965",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/presence/lumina_presence_anchors.gd",
+      "bytes": 4351,
+      "source_sha256": "4695e0cf848c2d2016468c75d725c85ca8c4893f779c066b4c8017a1db32f864",
+      "public_sha256": "4695e0cf848c2d2016468c75d725c85ca8c4893f779c066b4c8017a1db32f864",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/presence/lumina_presence_controller.gd",
+      "bytes": 24048,
+      "source_sha256": "7bbeb85bd71c791e77478ac7b4505ec2ce6cc35d16b8e0caafa23cb80aeba78f",
+      "public_sha256": "7bbeb85bd71c791e77478ac7b4505ec2ce6cc35d16b8e0caafa23cb80aeba78f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/presence/lumina_presence_mover.gd",
+      "bytes": 7741,
+      "source_sha256": "512cd10253dea0a2314a7a4f9c17aabf837143fa14441779c273302319035e6b",
+      "public_sha256": "512cd10253dea0a2314a7a4f9c17aabf837143fa14441779c273302319035e6b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/presence/lumina_presence_states.gd",
+      "bytes": 1164,
+      "source_sha256": "1399433b375d773dece1dc21be305cff96c43520d56dacd96a88a265f143cd3a",
+      "public_sha256": "1399433b375d773dece1dc21be305cff96c43520d56dacd96a88a265f143cd3a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/presence/lumina_presence_stuck_guard.gd",
+      "bytes": 2211,
+      "source_sha256": "b23c4f03ae95d02985ea56eb2cadfb0d8f212e7be2af4d8626654bf25e0d1634",
+      "public_sha256": "b23c4f03ae95d02985ea56eb2cadfb0d8f212e7be2af4d8626654bf25e0d1634",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/sena_motion_readiness_report.gd",
+      "bytes": 5181,
+      "source_sha256": "2f637c29c2e528a6b17d40135484671bcdba1d95c08bb78b9427f341c847b37c",
+      "public_sha256": "2f637c29c2e528a6b17d40135484671bcdba1d95c08bb78b9427f341c847b37c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_anchor_publisher.gd",
+      "bytes": 3060,
+      "source_sha256": "1aae8fd60595e6e66f7c7bd257a6fa4cf7e92d692a4c6a08698945dd53db6193",
+      "public_sha256": "1aae8fd60595e6e66f7c7bd257a6fa4cf7e92d692a4c6a08698945dd53db6193",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_demo_avatar_controller.gd",
+      "bytes": 88920,
+      "source_sha256": "49561bc831600ca0eb0a2b2a5c6863b51e1c1bf8ef65f05b61ba7696eebc378d",
+      "public_sha256": "49561bc831600ca0eb0a2b2a5c6863b51e1c1bf8ef65f05b61ba7696eebc378d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_follow_camera.gd",
+      "bytes": 31015,
+      "source_sha256": "6b92d5be6d6ea5bfe372ffa7dbb472c6eb00b4d1727d55879b5109a5b0964a62",
+      "public_sha256": "6b92d5be6d6ea5bfe372ffa7dbb472c6eb00b4d1727d55879b5109a5b0964a62",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_glb_avatar_adapter.gd",
+      "bytes": 36820,
+      "source_sha256": "840dee8f5814c787e59b940b2f69033908fd86f4eddb3a4d5961235adeab0ccd",
+      "public_sha256": "840dee8f5814c787e59b940b2f69033908fd86f4eddb3a4d5961235adeab0ccd",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_glb_natural_animation_scheduler.gd",
+      "bytes": 9561,
+      "source_sha256": "f74d77cf44f2a6a9b1e9863ae86498652dfb235262ea59b61d057a0eff1216e5",
+      "public_sha256": "f74d77cf44f2a6a9b1e9863ae86498652dfb235262ea59b61d057a0eff1216e5",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_godot_control_panel.gd",
+      "bytes": 33458,
+      "source_sha256": "8bf23fb164271c2b88f0c0bc51f5d77bd807ba995080b17024d622bd0cbb7766",
+      "public_sha256": "8bf23fb164271c2b88f0c0bc51f5d77bd807ba995080b17024d622bd0cbb7766",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_lumina_eye_camera.gd",
+      "bytes": 1556,
+      "source_sha256": "4a7a686175a1b305197947088f7e51c6640602b428b7edd0c85f1b4eb61292ac",
+      "public_sha256": "4a7a686175a1b305197947088f7e51c6640602b428b7edd0c85f1b4eb61292ac",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_lumina_title_menu.gd",
+      "bytes": 29504,
+      "source_sha256": "cef1cf16b16a7778b1fbb7b5d75cd2127b4df807cfbbb069628bf42d6d5d408c",
+      "public_sha256": "cef1cf16b16a7778b1fbb7b5d75cd2127b4df807cfbbb069628bf42d6d5d408c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_obstacle_route_planner.gd",
+      "bytes": 15506,
+      "source_sha256": "d51e79d57df71524061f19fcf33240b5cb5a1e1848343588dc0ad0171c9de619",
+      "public_sha256": "d51e79d57df71524061f19fcf33240b5cb5a1e1848343588dc0ad0171c9de619",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_player_avatar_controller.gd",
+      "bytes": 7871,
+      "source_sha256": "fa48705eb9340622d7646d27407ebe1882ed678ee780a3d23dbd5c4507e59e4a",
+      "public_sha256": "fa48705eb9340622d7646d27407ebe1882ed678ee780a3d23dbd5c4507e59e4a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_portable_depth_sensor.gd",
+      "bytes": 10860,
+      "source_sha256": "71690d855a5448391105aa003ceeace5fed20e44c42ec644ca6eaf0bfd99b899",
+      "public_sha256": "71690d855a5448391105aa003ceeace5fed20e44c42ec644ca6eaf0bfd99b899",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_pose_feed_pulse.gd",
+      "bytes": 3187,
+      "source_sha256": "798b404ce714a7f3991ed368459f76c8def008d5bb8b501deb4600080534ecb4",
+      "public_sha256": "798b404ce714a7f3991ed368459f76c8def008d5bb8b501deb4600080534ecb4",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_vrm_avatar_adapter.gd",
+      "bytes": 150746,
+      "source_sha256": "02b4c1efae20069ca25ff42742d7f73be81b288d67e5fa704f68469871a860a0",
+      "public_sha256": "02b4c1efae20069ca25ff42742d7f73be81b288d67e5fa704f68469871a860a0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/si_vrma_motion_sampler.gd",
+      "bytes": 7431,
+      "source_sha256": "da40490a83caf4b5748d9340bccc8eb7f9b60ad5e26c82443b6b0715892cb791",
+      "public_sha256": "da40490a83caf4b5748d9340bccc8eb7f9b60ad5e26c82443b6b0715892cb791",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/tools/build_lumina_profile62_scene_cache.gd",
+      "bytes": 2309,
+      "source_sha256": "0440875c0bdb504eef38920ff77a329b776bc105afe00be7f3126f47033c92bb",
+      "public_sha256": "0440875c0bdb504eef38920ff77a329b776bc105afe00be7f3126f47033c92bb",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/ui/lumina_editorial_demo.gd",
+      "bytes": 12034,
+      "source_sha256": "cb6746df06b15e3658e1280aa6badf7261c0a42141bf1ac7e89a7a28588adb38",
+      "public_sha256": "cb6746df06b15e3658e1280aa6badf7261c0a42141bf1ac7e89a7a28588adb38",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/ui/lumina_editorial_hud.gd",
+      "bytes": 37794,
+      "source_sha256": "ccc64e13199cf1a66f3651ae396f0fb850f30c39ce90711470e4167717d0163a",
+      "public_sha256": "ccc64e13199cf1a66f3651ae396f0fb850f30c39ce90711470e4167717d0163a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/ui/lumina_editorial_palette.gd",
+      "bytes": 677,
+      "source_sha256": "a83367f67f9a37a101180d632b3bb3023a3661854b3d18b94bc8b7d4763db0ae",
+      "public_sha256": "a83367f67f9a37a101180d632b3bb3023a3661854b3d18b94bc8b7d4763db0ae",
+      "local_path_redacted": false
+    },
+    {
+      "path": "godot/scripts/v24_rear_hair_preview.gd",
+      "bytes": 1797,
+      "source_sha256": "5ddd910ccc80d9ff2043530e7841e83ec8baf572c9472cda450ec726d5ab731b",
+      "public_sha256": "bc6cd7f1f93d94022180f88ce1426fc9865576756cd8693b1b61df8c9ccf3a33",
+      "local_path_redacted": true
+    },
+    {
+      "path": "lumina_next/__init__.py",
+      "bytes": 252,
+      "source_sha256": "d37a6e874ee5db675d5f31d87da6a12f3923db3f10d09c2273ea1e61b968d1b5",
+      "public_sha256": "d37a6e874ee5db675d5f31d87da6a12f3923db3f10d09c2273ea1e61b968d1b5",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/app.py",
+      "bytes": 27173,
+      "source_sha256": "779e9b0b5c7b43a797794c880d4386cf6251b0f07e50d81c6b480f1b212f59e5",
+      "public_sha256": "779e9b0b5c7b43a797794c880d4386cf6251b0f07e50d81c6b480f1b212f59e5",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/arrival_pose_epoch_fast_path_v1.py",
+      "bytes": 47369,
+      "source_sha256": "f1eb7ecbbec6290df7226c35e94ab0f923506099a33b87cd7221ba11de947e25",
+      "public_sha256": "f1eb7ecbbec6290df7226c35e94ab0f923506099a33b87cd7221ba11de947e25",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/auto_tuner.py",
+      "bytes": 5683,
+      "source_sha256": "0fef46580295b1b274986a4b6847fd4e4a1aaacc053a31849c3a530123de44f0",
+      "public_sha256": "0fef46580295b1b274986a4b6847fd4e4a1aaacc053a31849c3a530123de44f0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/autonomy_orchestrator_v1.py",
+      "bytes": 15874,
+      "source_sha256": "e5f06a151c950e15003a378361062718f6a4e581f0db096dccb9695cbf0c2bac",
+      "public_sha256": "e5f06a151c950e15003a378361062718f6a4e581f0db096dccb9695cbf0c2bac",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/autonomy_redteam_v1.py",
+      "bytes": 40183,
+      "source_sha256": "7df85c439def9a71e94c49f5d75eff55c2e301cb759cebe004b2125312c8a1db",
+      "public_sha256": "7df85c439def9a71e94c49f5d75eff55c2e301cb759cebe004b2125312c8a1db",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/autonomy_supervisor.py",
+      "bytes": 63119,
+      "source_sha256": "587fb35de7bf0a782135d02ef87443a66fc207d5d963fe15f2d8832d6f5a8c41",
+      "public_sha256": "587fb35de7bf0a782135d02ef87443a66fc207d5d963fe15f2d8832d6f5a8c41",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/autonomy_watchdog_v1.py",
+      "bytes": 10671,
+      "source_sha256": "1422b0811270d9ec50b6d0fedfe6d47d565f61c6756e96f8d61bd45e2cc7b479",
+      "public_sha256": "1422b0811270d9ec50b6d0fedfe6d47d565f61c6756e96f8d61bd45e2cc7b479",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/beta_cohort_protocol_v1.py",
+      "bytes": 25299,
+      "source_sha256": "fded1e59c220d1be7f1911e102e18dc0e2f82f5e36e304bd81c0bcf01d71d1fa",
+      "public_sha256": "fded1e59c220d1be7f1911e102e18dc0e2f82f5e36e304bd81c0bcf01d71d1fa",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/beta_decision_memo_v1.py",
+      "bytes": 33111,
+      "source_sha256": "ef0ab566988a1462559145069b7e72cf0a0b56e568643a2cc130eb53f8b785b5",
+      "public_sha256": "630f2ce5302fd63835059692f2b3a2dd8948da1e7cd03fff9cf164f6e0cac109",
+      "local_path_redacted": true
+    },
+    {
+      "path": "lumina_next/beta_telemetry_privacy_v1.py",
+      "bytes": 23934,
+      "source_sha256": "2cb4b159f9c2841ff90655bcf17b53bc9193c5614e3f21a1c46b64cfe2ffe57d",
+      "public_sha256": "2cb4b159f9c2841ff90655bcf17b53bc9193c5614e3f21a1c46b64cfe2ffe57d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/bonsai_output_guard.py",
+      "bytes": 2083,
+      "source_sha256": "56b2f05a6ed1696544af682f160810794e54bd69a72d615ef8666eeccb48c106",
+      "public_sha256": "56b2f05a6ed1696544af682f160810794e54bd69a72d615ef8666eeccb48c106",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/circuit_breaker.py",
+      "bytes": 4203,
+      "source_sha256": "7b6bba6dc48b2151a2af02ecdb1df242c9977640808ed51c777f2e4f66072e49",
+      "public_sha256": "7b6bba6dc48b2151a2af02ecdb1df242c9977640808ed51c777f2e4f66072e49",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/cognitive_state.py",
+      "bytes": 12452,
+      "source_sha256": "cf875f4cbcad4b1b06d09e6638da32ab3a289f39aa06296be8c5416bcc77a3f2",
+      "public_sha256": "cf875f4cbcad4b1b06d09e6638da32ab3a289f39aa06296be8c5416bcc77a3f2",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/community_safety_v1.py",
+      "bytes": 51022,
+      "source_sha256": "9c1b1986f05e1066a06ed7a52708e3162b22b6b5d7094c33dd644cb6de6e90ef",
+      "public_sha256": "9c1b1986f05e1066a06ed7a52708e3162b22b6b5d7094c33dd644cb6de6e90ef",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/config.py",
+      "bytes": 18261,
+      "source_sha256": "a1f71316e608793e165d0366e1f67ecbed6e584ff8750af6295fd08acbabcd81",
+      "public_sha256": "a1f71316e608793e165d0366e1f67ecbed6e584ff8750af6295fd08acbabcd81",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/conversation_diversity.py",
+      "bytes": 8993,
+      "source_sha256": "b83bc53ea8b584098141d378ddd69356ed9cf580ab0cc57aeecf0bde01f88c79",
+      "public_sha256": "b83bc53ea8b584098141d378ddd69356ed9cf580ab0cc57aeecf0bde01f88c79",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/conversation_gate.py",
+      "bytes": 7340,
+      "source_sha256": "30b03f88f7d1c18db05cb4dbcd890b61faf75670e20606d62bdb1214f74e3215",
+      "public_sha256": "30b03f88f7d1c18db05cb4dbcd890b61faf75670e20606d62bdb1214f74e3215",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/conversation_quality.py",
+      "bytes": 26075,
+      "source_sha256": "ee86c1ac2c3310b640de40cb75f3123bc370461e42aa621fb6a5c58a8666dcc4",
+      "public_sha256": "ee86c1ac2c3310b640de40cb75f3123bc370461e42aa621fb6a5c58a8666dcc4",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/embodied_action_api_v1.py",
+      "bytes": 40702,
+      "source_sha256": "486d5b8cd977f800e11208faf6b910851c1d3885cc9e240b3144ac5f112be80c",
+      "public_sha256": "486d5b8cd977f800e11208faf6b910851c1d3885cc9e240b3144ac5f112be80c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/g5_embodied_review_pack_v1.py",
+      "bytes": 17124,
+      "source_sha256": "b9cd55e464a247a165035a09664791de2212b707d0ea32f3caa4862673eb594a",
+      "public_sha256": "b9cd55e464a247a165035a09664791de2212b707d0ea32f3caa4862673eb594a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/g6_independent_review_pack_v1.py",
+      "bytes": 31805,
+      "source_sha256": "66fb40f69c6895d675a16e5e6dc49bcbe2c0fd984b39409a33ad4b64174fe936",
+      "public_sha256": "66fb40f69c6895d675a16e5e6dc49bcbe2c0fd984b39409a33ad4b64174fe936",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/g7_independent_review_pack_v1.py",
+      "bytes": 32706,
+      "source_sha256": "547491edcd39d4d21d4f4e4e346e4a678ae01a32c6e543a6ad89a7e10117d71a",
+      "public_sha256": "62ce88c6737af05220943ea6b0f182ca3c07015c9fb5a32101483f50f22143d9",
+      "local_path_redacted": true
+    },
+    {
+      "path": "lumina_next/g8_release_review_pack_v1.py",
+      "bytes": 16994,
+      "source_sha256": "4ef211c6d7bbf60faff61d16b7e2388341122826411596c0c2ad3a2cf0f800b7",
+      "public_sha256": "4ef211c6d7bbf60faff61d16b7e2388341122826411596c0c2ad3a2cf0f800b7",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/gate_review_pack_v1.py",
+      "bytes": 5534,
+      "source_sha256": "1a6335adb1be7822958250317d400a6865aa6f8eac22015739af2d2cbd5dec5a",
+      "public_sha256": "1a6335adb1be7822958250317d400a6865aa6f8eac22015739af2d2cbd5dec5a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/gemma4_e4b_hand_chats.py",
+      "bytes": 13844,
+      "source_sha256": "1562236730b7e5c4b76f7d58b5e0ea995e7b446aae746b27bb9241b1cc680790",
+      "public_sha256": "1562236730b7e5c4b76f7d58b5e0ea995e7b446aae746b27bb9241b1cc680790",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/gemma4_e4b_rag.py",
+      "bytes": 6739,
+      "source_sha256": "6e5c28c7dfce43c2a0f9addb581dfca2ab46e5e77cf4e6a6ba8d659a9f19b7b3",
+      "public_sha256": "6e5c28c7dfce43c2a0f9addb581dfca2ab46e5e77cf4e6a6ba8d659a9f19b7b3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/gemma4_e4b_style.py",
+      "bytes": 4070,
+      "source_sha256": "fe84dcd6bba1bd3cb01e0efa7d4d524d77ceedbae484d89ad32efd57c361f916",
+      "public_sha256": "fe84dcd6bba1bd3cb01e0efa7d4d524d77ceedbae484d89ad32efd57c361f916",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/goal_intent_model_v1.py",
+      "bytes": 27747,
+      "source_sha256": "aa2765485d4661512c7d53ea42d124a66dabb34fc5e6cfeb89d251ee57a71730",
+      "public_sha256": "aa2765485d4661512c7d53ea42d124a66dabb34fc5e6cfeb89d251ee57a71730",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/godot_portable_navigation_adapter_v1.py",
+      "bytes": 78046,
+      "source_sha256": "9ee11626ac8ddf904dfa60d15ebcc9e12cb680fb5c9d15de61ada24578d90c0c",
+      "public_sha256": "9ee11626ac8ddf904dfa60d15ebcc9e12cb680fb5c9d15de61ada24578d90c0c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/health_checks.py",
+      "bytes": 532,
+      "source_sha256": "d74efbca2c019e7a14a5577bf513898ffa42380dd1a9319fcf83048b64e46b41",
+      "public_sha256": "d74efbca2c019e7a14a5577bf513898ffa42380dd1a9319fcf83048b64e46b41",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/human_autonomy.py",
+      "bytes": 16892,
+      "source_sha256": "c9f85f23a4f7bd15cd96f34bdb7a9c3932024ecbb653a83cd5ec0ef8543a91fe",
+      "public_sha256": "c9f85f23a4f7bd15cd96f34bdb7a9c3932024ecbb653a83cd5ec0ef8543a91fe",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/improvement_loop_v1.py",
+      "bytes": 13906,
+      "source_sha256": "791fdf67015891e1b76aa26a5b5c44a028275ecb732248d266baa31c2c3bc73a",
+      "public_sha256": "791fdf67015891e1b76aa26a5b5c44a028275ecb732248d266baa31c2c3bc73a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/incident_playbook_v1.py",
+      "bytes": 13419,
+      "source_sha256": "efa5a4442f07feb6495f26d9dc4fbfd35ce3fc6d624989aae329d8cf95d5221f",
+      "public_sha256": "efa5a4442f07feb6495f26d9dc4fbfd35ce3fc6d624989aae329d8cf95d5221f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/japanese_eval.py",
+      "bytes": 21878,
+      "source_sha256": "bf095949ecf7cb7e93ed7f37e38d87dc690f745066189e822af4075dee927e5f",
+      "public_sha256": "bf095949ecf7cb7e93ed7f37e38d87dc690f745066189e822af4075dee927e5f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/karakuri_cli.py",
+      "bytes": 1970,
+      "source_sha256": "33adf9b8f355c763d34c1e46c5b08961d0c1faf778ebd337f85779af6b5dd39c",
+      "public_sha256": "33adf9b8f355c763d34c1e46c5b08961d0c1faf778ebd337f85779af6b5dd39c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/karakuri_discord.py",
+      "bytes": 12258,
+      "source_sha256": "ccb98f2ef954553603b8296aeb7ad0ea70846b696ab2b63a7539bdb1ce9fb970",
+      "public_sha256": "ccb98f2ef954553603b8296aeb7ad0ea70846b696ab2b63a7539bdb1ce9fb970",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/karakuri_session.py",
+      "bytes": 20746,
+      "source_sha256": "5d2e2b8aa7ac262273c1225fbd1348177cae0e055defa10b47c8277d7c5007f3",
+      "public_sha256": "5d2e2b8aa7ac262273c1225fbd1348177cae0e055defa10b47c8277d7c5007f3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/karakuri_world.py",
+      "bytes": 167045,
+      "source_sha256": "c7fd446f98b1153c897443b1e9394f92f86a27b7206774022ef07c968c221966",
+      "public_sha256": "c7fd446f98b1153c897443b1e9394f92f86a27b7206774022ef07c968c221966",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/kokoro_tts_gateway.py",
+      "bytes": 24505,
+      "source_sha256": "63fca16818a1376ad792de4a713939f372c24c326ff92f1d5c83034b9bb9a869",
+      "public_sha256": "63fca16818a1376ad792de4a713939f372c24c326ff92f1d5c83034b9bb9a869",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/llama_compat.py",
+      "bytes": 8071,
+      "source_sha256": "a5747e11abee97c8d046ad9e999a1e797910b105be15dfbb0dd396a7e386fb42",
+      "public_sha256": "a5747e11abee97c8d046ad9e999a1e797910b105be15dfbb0dd396a7e386fb42",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/local_benchmark.py",
+      "bytes": 6534,
+      "source_sha256": "eaea7f310ff6ec3c512f2a0f5a8d264915fdc5eab0c0912ca90eb0de06315966",
+      "public_sha256": "eaea7f310ff6ec3c512f2a0f5a8d264915fdc5eab0c0912ca90eb0de06315966",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/longitudinal_beta_eval_v1.py",
+      "bytes": 13018,
+      "source_sha256": "d11951094378e998719561170d037e1d2f8ea41d22401bb0741c74942d774be8",
+      "public_sha256": "d11951094378e998719561170d037e1d2f8ea41d22401bb0741c74942d774be8",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/longitudinal_memory_eval_v1.py",
+      "bytes": 30378,
+      "source_sha256": "eb6a1a01101d53ba5b0b1d9118e77d5d6c12592fc8d866575692c34b87a6b272",
+      "public_sha256": "eb6a1a01101d53ba5b0b1d9118e77d5d6c12592fc8d866575692c34b87a6b272",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/memory.py",
+      "bytes": 7744,
+      "source_sha256": "a7b5b4315e95b71cd51fed932cde7e46bd39254f3d05bc103a82cf9cbc1e02b2",
+      "public_sha256": "a7b5b4315e95b71cd51fed932cde7e46bd39254f3d05bc103a82cf9cbc1e02b2",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/memory_consent_v1.py",
+      "bytes": 14349,
+      "source_sha256": "5c95a2c8432d852e248bdbbfa3d6a89e2632fbdf40a8561240aa4fad7ff0a7ae",
+      "public_sha256": "5c95a2c8432d852e248bdbbfa3d6a89e2632fbdf40a8561240aa4fad7ff0a7ae",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/memory_control_service_v1.py",
+      "bytes": 8719,
+      "source_sha256": "e23b8d0c8a4c108ded673b8b1ffb9784c75b2e7ae512acdff8377bdfcee2e351",
+      "public_sha256": "e23b8d0c8a4c108ded673b8b1ffb9784c75b2e7ae512acdff8377bdfcee2e351",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/memory_repair_v1.py",
+      "bytes": 48500,
+      "source_sha256": "c78f88e8850075e8674faadfd2ae20da96ccc5962ffa4e88dfa0998a73997a99",
+      "public_sha256": "c78f88e8850075e8674faadfd2ae20da96ccc5962ffa4e88dfa0998a73997a99",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/memory_retrieval_v1.py",
+      "bytes": 9046,
+      "source_sha256": "bd1f98cc6d98d5e73e9520dd1e22c79f2668b2116b93ced31aa11b9f1aa8da8d",
+      "public_sha256": "bd1f98cc6d98d5e73e9520dd1e22c79f2668b2116b93ced31aa11b9f1aa8da8d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/memory_sleep.py",
+      "bytes": 26849,
+      "source_sha256": "43a7dffb189ebda7b8e2676b717a33be558cd25321c85c68097a17f2e65a9aba",
+      "public_sha256": "43a7dffb189ebda7b8e2676b717a33be558cd25321c85c68097a17f2e65a9aba",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/model_broker.py",
+      "bytes": 24412,
+      "source_sha256": "a111c47936bc4ff849bc377f7b9565cc2bd999445e942a65463e588f0f78ff33",
+      "public_sha256": "a111c47936bc4ff849bc377f7b9565cc2bd999445e942a65463e588f0f78ff33",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/model_broker_types.py",
+      "bytes": 7042,
+      "source_sha256": "ce3399a8e0bd141df80bbd1b3ae34e79b53013837e85d677dfe4abf7757fed5f",
+      "public_sha256": "ce3399a8e0bd141df80bbd1b3ae34e79b53013837e85d677dfe4abf7757fed5f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/model_lifecycle_fsm.py",
+      "bytes": 11017,
+      "source_sha256": "4279aab210aefca5e1592a64ae6cab41d04c9837dd66c02594cf521bc49460d8",
+      "public_sha256": "4279aab210aefca5e1592a64ae6cab41d04c9837dd66c02594cf521bc49460d8",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/motion_semantics_v1.py",
+      "bytes": 40192,
+      "source_sha256": "63348d3f0ccdaace14c439dd25e3bda4982dac49ed5d8ea3a980e51b4ccbe69a",
+      "public_sha256": "63348d3f0ccdaace14c439dd25e3bda4982dac49ed5d8ea3a980e51b4ccbe69a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/multi_user_identity_v1.py",
+      "bytes": 55332,
+      "source_sha256": "eb3d43fb492635af17965a0eff25be54bcd933fb4bbbb5998b0a6b67de2c6ca2",
+      "public_sha256": "eb3d43fb492635af17965a0eff25be54bcd933fb4bbbb5998b0a6b67de2c6ca2",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/ops/diagnostics.py",
+      "bytes": 6662,
+      "source_sha256": "5002aee8180c8156c4f8ad8dfa511f9eb9139f14ba4c81afd7261300f78ecef0",
+      "public_sha256": "5002aee8180c8156c4f8ad8dfa511f9eb9139f14ba4c81afd7261300f78ecef0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/orchestrator.py",
+      "bytes": 46854,
+      "source_sha256": "4ed8981386bf07337be76c17ce4be138b3897aa0a0f5ff60af9915c739ec5a0e",
+      "public_sha256": "4ed8981386bf07337be76c17ce4be138b3897aa0a0f5ff60af9915c739ec5a0e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/perception_v1.py",
+      "bytes": 10503,
+      "source_sha256": "e154bb34ec5bf7a2abada26de8e084c1608ac86a685bc85224275a930c9f85a8",
+      "public_sha256": "e154bb34ec5bf7a2abada26de8e084c1608ac86a685bc85224275a930c9f85a8",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/permission_modes_v1.py",
+      "bytes": 11103,
+      "source_sha256": "f4eb1937d3d7811d6f8ea9d5674b2d7e1a11c3383f8d9f4417a0e13a5c40a32f",
+      "public_sha256": "f4eb1937d3d7811d6f8ea9d5674b2d7e1a11c3383f8d9f4417a0e13a5c40a32f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/persona.py",
+      "bytes": 2115,
+      "source_sha256": "16a9bdac735137527b77e8ea19cbd48a29a7489134ba19b3325d4e0404674a0a",
+      "public_sha256": "16a9bdac735137527b77e8ea19cbd48a29a7489134ba19b3325d4e0404674a0a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/portable_navigation_contract_v1.py",
+      "bytes": 57746,
+      "source_sha256": "7c3a96c22d999fc27ed46be87189e2727b34174ae5b6599bf32557aa7775e8e7",
+      "public_sha256": "7c3a96c22d999fc27ed46be87189e2727b34174ae5b6599bf32557aa7775e8e7",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/portable_navigation_core_v1.py",
+      "bytes": 80374,
+      "source_sha256": "0f35b63c655ece13ffdc879943258e128c8ce79cfb9090cf580b354ed6bb1c7c",
+      "public_sha256": "0f35b63c655ece13ffdc879943258e128c8ce79cfb9090cf580b354ed6bb1c7c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/preintegration_conversation.py",
+      "bytes": 5973,
+      "source_sha256": "d99e64c5712cb00b9c9670dc98dee1ecf91e82884a93754ce44ff917e608263b",
+      "public_sha256": "d99e64c5712cb00b9c9670dc98dee1ecf91e82884a93754ce44ff917e608263b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/preintegration_runtime.py",
+      "bytes": 46333,
+      "source_sha256": "c2b2f8ae11beb03277e03750ef5a0302d78088b0a0d9a3d3d7c8c1bca118a126",
+      "public_sha256": "c2b2f8ae11beb03277e03750ef5a0302d78088b0a0d9a3d3d7c8c1bca118a126",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/presence_evaluation_v1.py",
+      "bytes": 28212,
+      "source_sha256": "d85b209e755c0c3990badb4f80e9bcc43e200526746933f888352ea5504cb9ff",
+      "public_sha256": "d85b209e755c0c3990badb4f80e9bcc43e200526746933f888352ea5504cb9ff",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/proactive_trigger_v1.py",
+      "bytes": 30539,
+      "source_sha256": "66393bb8879cba461a22b345f8e04ac2fb2601c5548227e501956fae0c5d7827",
+      "public_sha256": "66393bb8879cba461a22b345f8e04ac2fb2601c5548227e501956fae0c5d7827",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/process_supervisor.py",
+      "bytes": 5094,
+      "source_sha256": "56886509cbf84484017977e2d868daa077fc633323996dc83d2dae7c81403b01",
+      "public_sha256": "56886509cbf84484017977e2d868daa077fc633323996dc83d2dae7c81403b01",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/prompt_contract_v1.py",
+      "bytes": 6980,
+      "source_sha256": "afa26e2b419511b69bcd8e7d4d72b139290b2f8da0686a6c45edbb037e61fec3",
+      "public_sha256": "afa26e2b419511b69bcd8e7d4d72b139290b2f8da0686a6c45edbb037e61fec3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/__init__.py",
+      "bytes": 643,
+      "source_sha256": "d8a1adb1672acbb200997c396979efe41f796ba2ee041493c9c555e92ad81961",
+      "public_sha256": "d8a1adb1672acbb200997c396979efe41f796ba2ee041493c9c555e92ad81961",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/bonsai_q1.py",
+      "bytes": 4177,
+      "source_sha256": "26b489585f3a744d8d718d9acbcdf2696dcd40fd0bc996a4f437b083ee424401",
+      "public_sha256": "26b489585f3a744d8d718d9acbcdf2696dcd40fd0bc996a4f437b083ee424401",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/bridge.py",
+      "bytes": 7093,
+      "source_sha256": "0d538b10fdd638162bb6617ca012e96b343733f380e73e50f05a4de8e8167f60",
+      "public_sha256": "0d538b10fdd638162bb6617ca012e96b343733f380e73e50f05a4de8e8167f60",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/embedding.py",
+      "bytes": 3294,
+      "source_sha256": "ad38f36aaada9b19065646b72852c38ac4411406889be57969c8808cfe9872cd",
+      "public_sha256": "ad38f36aaada9b19065646b72852c38ac4411406889be57969c8808cfe9872cd",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/litert_persistent.py",
+      "bytes": 35853,
+      "source_sha256": "f4bdb2487fc73c0291a43a260858c370405e5e7876e6ed300aef4e0ef534748a",
+      "public_sha256": "f4bdb2487fc73c0291a43a260858c370405e5e7876e6ed300aef4e0ef534748a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/llm.py",
+      "bytes": 6522,
+      "source_sha256": "827d56104fe39aa9171d6807bca5ceb540dca9f72da658d4aec92d3e50c451e3",
+      "public_sha256": "827d56104fe39aa9171d6807bca5ceb540dca9f72da658d4aec92d3e50c451e3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/mlx_compatible.py",
+      "bytes": 20968,
+      "source_sha256": "9f02752cfd0cf60b2d915a0e119879c025f7e7f8a8120d69ec2730d0f819b786",
+      "public_sha256": "9f02752cfd0cf60b2d915a0e119879c025f7e7f8a8120d69ec2730d0f819b786",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/openai_compatible.py",
+      "bytes": 15661,
+      "source_sha256": "358379a4821d765eb9aa6e07bcf518b6ef0d6d704076644af69b34a0531ecf9a",
+      "public_sha256": "358379a4821d765eb9aa6e07bcf518b6ef0d6d704076644af69b34a0531ecf9a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/stt.py",
+      "bytes": 13924,
+      "source_sha256": "5f46fa8028b403a0e2f01015bb3726f70c3e961cb1aeacc2d47f5f7fdccc3e00",
+      "public_sha256": "5f46fa8028b403a0e2f01015bb3726f70c3e961cb1aeacc2d47f5f7fdccc3e00",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/providers/tts.py",
+      "bytes": 5186,
+      "source_sha256": "5484af0321966e63680b717ed3e5a277be881f08e2645207abaea6508331044b",
+      "public_sha256": "5484af0321966e63680b717ed3e5a277be881f08e2645207abaea6508331044b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/proxemics_rules_v1.py",
+      "bytes": 31850,
+      "source_sha256": "98481e38813cfbd1422be4d08c9e9ce5c9ec8f60f9f992e34f90f9e488b0fb99",
+      "public_sha256": "98481e38813cfbd1422be4d08c9e9ce5c9ec8f60f9f992e34f90f9e488b0fb99",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/quality_triage_v1.py",
+      "bytes": 53449,
+      "source_sha256": "9fe1d9015ba936620b3f4043daed79f2e8bfba983fb6d7af24d399f7b22017a8",
+      "public_sha256": "d57a900952ea61f5ada6b73885b1652f7e07ec0fe2e3abde12ea437a82838031",
+      "local_path_redacted": true
+    },
+    {
+      "path": "lumina_next/relationship_model_v1.py",
+      "bytes": 32328,
+      "source_sha256": "8ed2f3cc965f069d1ec581225b139924de0b90b162fbd2c26484fab3235e16e0",
+      "public_sha256": "8ed2f3cc965f069d1ec581225b139924de0b90b162fbd2c26484fab3235e16e0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/release_engineering_v1.py",
+      "bytes": 17604,
+      "source_sha256": "d0c9a08fdbc9bd88a16baa8bf4829aa67bec09a055abc81e9b08de6a7e84b067",
+      "public_sha256": "d0c9a08fdbc9bd88a16baa8bf4829aa67bec09a055abc81e9b08de6a7e84b067",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/release_gate_v1.py",
+      "bytes": 12834,
+      "source_sha256": "99514d494f2431444266dbb784ac2e8845a0d753c680176f9a594e672f69939f",
+      "public_sha256": "99514d494f2431444266dbb784ac2e8845a0d753c680176f9a594e672f69939f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/requirements.txt",
+      "bytes": 52,
+      "source_sha256": "4606cff80b771d4ea28d80f6dba0333e0c934f262949fcfb4540960223903d02",
+      "public_sha256": "4606cff80b771d4ea28d80f6dba0333e0c934f262949fcfb4540960223903d02",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/resource_governor.py",
+      "bytes": 10331,
+      "source_sha256": "8fe520cb3d8c31307da20253057bb7ce7531d55b5fbaa757b63dd5aa4b7a7e9d",
+      "public_sha256": "8fe520cb3d8c31307da20253057bb7ce7531d55b5fbaa757b63dd5aa4b7a7e9d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/resource_policy.py",
+      "bytes": 7575,
+      "source_sha256": "5300e4b89568bbe4cb6a4e41ddfe15cd0ef61765d46b6c26118683a75eafc572",
+      "public_sha256": "5300e4b89568bbe4cb6a4e41ddfe15cd0ef61765d46b6c26118683a75eafc572",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/resources.py",
+      "bytes": 4542,
+      "source_sha256": "241da8bd85a92e877654cf6f48e858bb1ee1881d0c71c42ebacb3294290abd27",
+      "public_sha256": "241da8bd85a92e877654cf6f48e858bb1ee1881d0c71c42ebacb3294290abd27",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/risk_policy_v1.py",
+      "bytes": 11040,
+      "source_sha256": "20ba43c38bfeda8e7cd49583be2df8f6e8e47781a6284001ba3f01c3cc6a169f",
+      "public_sha256": "20ba43c38bfeda8e7cd49583be2df8f6e8e47781a6284001ba3f01c3cc6a169f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/role_packs_v1.py",
+      "bytes": 48415,
+      "source_sha256": "a1f8bae79e45c5db2bb6379890183a0aa49a86043be073f1365b11d2de0aec79",
+      "public_sha256": "a1f8bae79e45c5db2bb6379890183a0aa49a86043be073f1365b11d2de0aec79",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/shisa_conversation.py",
+      "bytes": 7365,
+      "source_sha256": "28f37ae3b667275d8d73c7433eb06eb2960a8b9a3c8f08c58866eb76ca044f5d",
+      "public_sha256": "28f37ae3b667275d8d73c7433eb06eb2960a8b9a3c8f08c58866eb76ca044f5d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/sleep_cycle.py",
+      "bytes": 4722,
+      "source_sha256": "0979e28189ded51ddfb5a03c34c7dd09989a2326b42ababa83c8e0f5c7d32921",
+      "public_sha256": "0979e28189ded51ddfb5a03c34c7dd09989a2326b42ababa83c8e0f5c7d32921",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/slo_monitoring_v1.py",
+      "bytes": 13652,
+      "source_sha256": "cd97a7b581a54948a422980acb31e1b93780118ce01c766306b37bd2f3f59498",
+      "public_sha256": "cd97a7b581a54948a422980acb31e1b93780118ce01c766306b37bd2f3f59498",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/social_interaction_protocol_v1.py",
+      "bytes": 52784,
+      "source_sha256": "f15e6caf00f46e18701a66284c6ac4fb7633fcedb98892e35b2db8ac6ed34480",
+      "public_sha256": "f15e6caf00f46e18701a66284c6ac4fb7633fcedb98892e35b2db8ac6ed34480",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/spatial_context_v1.py",
+      "bytes": 18616,
+      "source_sha256": "b5c677f128f0299a55b55e2efc1cfb68244c002460d87b815f1ca0f7d91d7d55",
+      "public_sha256": "b5c677f128f0299a55b55e2efc1cfb68244c002460d87b815f1ca0f7d91d7d55",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/spatial_navigation_v1.py",
+      "bytes": 31504,
+      "source_sha256": "af3b9e239935e08ca97bee291af86d035a157fc0e50cfd3b0ae5ef80393844ed",
+      "public_sha256": "af3b9e239935e08ca97bee291af86d035a157fc0e50cfd3b0ae5ef80393844ed",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/speaking_style_growth.py",
+      "bytes": 5282,
+      "source_sha256": "e65111199273b1815caef44d1b2af9a18054712797bf14da2d69482a754dc7ed",
+      "public_sha256": "e65111199273b1815caef44d1b2af9a18054712797bf14da2d69482a754dc7ed",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/sqlite_memory.py",
+      "bytes": 58092,
+      "source_sha256": "22d851cb00dfa4346ee1b6b17f3b2ff0508fed57bfb1335cf8598aa1c8cd070e",
+      "public_sha256": "22d851cb00dfa4346ee1b6b17f3b2ff0508fed57bfb1335cf8598aa1c8cd070e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/state_reconciliation_v1.py",
+      "bytes": 22417,
+      "source_sha256": "b9fbffb615134f4772d48d2693d04f5228a5ca675fbe3e0fa4a2eb2ec282e9d6",
+      "public_sha256": "b9fbffb615134f4772d48d2693d04f5228a5ca675fbe3e0fa4a2eb2ec282e9d6",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/stt_gateway.py",
+      "bytes": 34892,
+      "source_sha256": "c8b45266327cef727e26deb2dd1f86d5ba33f63f4a13a9172d20877d30b39f86",
+      "public_sha256": "c8b45266327cef727e26deb2dd1f86d5ba33f63f4a13a9172d20877d30b39f86",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/tts_japanese_normalizer.py",
+      "bytes": 17603,
+      "source_sha256": "2b4291a718eb3c6c9c77eb510ef050f9089a71eeb276319c12b1d4a50c8908f8",
+      "public_sha256": "2b4291a718eb3c6c9c77eb510ef050f9089a71eeb276319c12b1d4a50c8908f8",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/tts_streaming.py",
+      "bytes": 12003,
+      "source_sha256": "890e7ec89124e774f12b9346a40fa1bfce8068908d0c9870eb35a97893314251",
+      "public_sha256": "890e7ec89124e774f12b9346a40fa1bfce8068908d0c9870eb35a97893314251",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/vision_preprocess.py",
+      "bytes": 11820,
+      "source_sha256": "50ac6aaea994e02c2f711f34d815754f5ba3603aa30d952f245b96a63438cbfa",
+      "public_sha256": "50ac6aaea994e02c2f711f34d815754f5ba3603aa30d952f245b96a63438cbfa",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/vision_runtime.py",
+      "bytes": 23930,
+      "source_sha256": "7772daedf164190175c69372fc57bc596b5cafba6406a7545bd25a8c7e5cea03",
+      "public_sha256": "7772daedf164190175c69372fc57bc596b5cafba6406a7545bd25a8c7e5cea03",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/visual_navigation.py",
+      "bytes": 165682,
+      "source_sha256": "3d720200946e68d1ec4ebe1d1ea3810f8665206db34059283494bf507ae373d8",
+      "public_sha256": "3d720200946e68d1ec4ebe1d1ea3810f8665206db34059283494bf507ae373d8",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/visual_perception.py",
+      "bytes": 68326,
+      "source_sha256": "e4f186f6369e9f7f96cf0ac0606dba7f0b6bfae3a20ebe7ffa7847797d94623f",
+      "public_sha256": "e4f186f6369e9f7f96cf0ac0606dba7f0b6bfae3a20ebe7ffa7847797d94623f",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/visual_phase.py",
+      "bytes": 13636,
+      "source_sha256": "5bf828048672f627635c520fedde082388969cce17156046ed889f2354864de0",
+      "public_sha256": "5bf828048672f627635c520fedde082388969cce17156046ed889f2354864de0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/visual_resource_budget.py",
+      "bytes": 14016,
+      "source_sha256": "548eb9941b4ad8831b0c35092f6af26132fc96185729fa3f93a45a00de240f17",
+      "public_sha256": "548eb9941b4ad8831b0c35092f6af26132fc96185729fa3f93a45a00de240f17",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/world_state_sources_v1.py",
+      "bytes": 7117,
+      "source_sha256": "55dfc9549bf379417380f1c695decc2d2fb43d628427899ab73656179b5b1645",
+      "public_sha256": "55dfc9549bf379417380f1c695decc2d2fb43d628427899ab73656179b5b1645",
+      "local_path_redacted": false
+    },
+    {
+      "path": "lumina_next/world_state_v1.py",
+      "bytes": 13705,
+      "source_sha256": "784b25cb6cf8157f1dde801d53babeeaac3382194c02a198d4c1dc5822da4280",
+      "public_sha256": "784b25cb6cf8157f1dde801d53babeeaac3382194c02a198d4c1dc5822da4280",
+      "local_path_redacted": false
+    },
+    {
+      "path": "scripts/check_lumina_visual_exhibit_mac.py",
+      "bytes": 44502,
+      "source_sha256": "85ef5dcf421fb290604e36a6660fd49a1b47c132a348f345bc863edb46ceb3f6",
+      "public_sha256": "aee7f7063ff16cccffd4d5f60fae7a7cdbfc77195ddfbb5b05760f8d8e04984e",
+      "local_path_redacted": true
+    },
+    {
+      "path": "scripts/replay_arrival_pose_epoch_fast_path_offline.py",
+      "bytes": 29913,
+      "source_sha256": "dcc80db3ec88f879b99b5932ba3bf927b66674b012457d06db6cc2dd5cabae27",
+      "public_sha256": "dcc80db3ec88f879b99b5932ba3bf927b66674b012457d06db6cc2dd5cabae27",
+      "local_path_redacted": false
+    },
+    {
+      "path": "scripts/start_irodori_product_5088_mac.sh",
+      "bytes": 17382,
+      "source_sha256": "070bd45be1f937ce0e30ed7466f2aa4d5dceac4c23f6611ccf36791281014671",
+      "public_sha256": "070bd45be1f937ce0e30ed7466f2aa4d5dceac4c23f6611ccf36791281014671",
+      "local_path_redacted": false
+    },
+    {
+      "path": "services/lumina_resource_epoch.py",
+      "bytes": 17415,
+      "source_sha256": "3767f31e6e17dcb6383416bab2f597b26225c29bbf231b705d2a464b51ca77b1",
+      "public_sha256": "3767f31e6e17dcb6383416bab2f597b26225c29bbf231b705d2a464b51ca77b1",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/__init__.py",
+      "bytes": 102,
+      "source_sha256": "15ef6e7b61cec6ab8c3de86806a1beb0e68d544213b4236a5dc7b6fe3a872878",
+      "public_sha256": "15ef6e7b61cec6ab8c3de86806a1beb0e68d544213b4236a5dc7b6fe3a872878",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/autonomy_llm.py",
+      "bytes": 206448,
+      "source_sha256": "fadc528d1fe7f70e6e9b56f5d1888386c5aad9ec295ff49b89a18cea53e54f7f",
+      "public_sha256": "4199f1ead81420ce7c4081e6ad05cf13752dd603743767e58a0ba733f9211c7e",
+      "local_path_redacted": true
+    },
+    {
+      "path": "si_godot_bridge/autonomy_planner.py",
+      "bytes": 21104,
+      "source_sha256": "872f988d4ca7cfb452c3e40fca1d33551640c702c0c48b6aa26231e97cf3fa90",
+      "public_sha256": "872f988d4ca7cfb452c3e40fca1d33551640c702c0c48b6aa26231e97cf3fa90",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/llm_context.py",
+      "bytes": 25935,
+      "source_sha256": "3755024b386e620d083b87ab58dea69df72e8942dd7b7f0ec58cb67071e6d109",
+      "public_sha256": "3755024b386e620d083b87ab58dea69df72e8942dd7b7f0ec58cb67071e6d109",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/lumina_humanity.py",
+      "bytes": 9667,
+      "source_sha256": "a8bfdbd9f38a0cf928c525936c81b3202b9fe8f7f4348a720706326ef28865d3",
+      "public_sha256": "a8bfdbd9f38a0cf928c525936c81b3202b9fe8f7f4348a720706326ef28865d3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/lumina_next_adapter.py",
+      "bytes": 5120,
+      "source_sha256": "44ed448d123c815491ff0956185f728569a89cf7cb3d4f880fe890cc3a46372c",
+      "public_sha256": "44ed448d123c815491ff0956185f728569a89cf7cb3d4f880fe890cc3a46372c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/protocol.py",
+      "bytes": 38126,
+      "source_sha256": "4590a383b9f052e1f7e051dbef6dac2c19a8759d3b91d7eb4029de0b43fe0920",
+      "public_sha256": "4590a383b9f052e1f7e051dbef6dac2c19a8759d3b91d7eb4029de0b43fe0920",
+      "local_path_redacted": false
+    },
+    {
+      "path": "si_godot_bridge/tts_text.py",
+      "bytes": 14670,
+      "source_sha256": "90a97f6f53ee8e6af34267c1649701f102b326bedae4128f1e94d84e37fcda00",
+      "public_sha256": "90a97f6f53ee8e6af34267c1649701f102b326bedae4128f1e94d84e37fcda00",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_arrival_pose_epoch_fast_path_v1.py",
+      "bytes": 63986,
+      "source_sha256": "ba0beb2323e7652337fb56002fb28ce71bfe642ce37812b2aa1c48a03bd86830",
+      "public_sha256": "ba0beb2323e7652337fb56002fb28ce71bfe642ce37812b2aa1c48a03bd86830",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_autonomy_visual_navigation_wiring_20260909.py",
+      "bytes": 24646,
+      "source_sha256": "0701a33851ec1284f989a75d3ed67d77fb1f59964e2523f344eac881c1bbe9a3",
+      "public_sha256": "0701a33851ec1284f989a75d3ed67d77fb1f59964e2523f344eac881c1bbe9a3",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_godot_portable_navigation_adapter_v1.py",
+      "bytes": 59736,
+      "source_sha256": "8798a3610cec5a9c0e73745e44f19bb9cfa6271a606a79ec794dd4e699a358bc",
+      "public_sha256": "8798a3610cec5a9c0e73745e44f19bb9cfa6271a606a79ec794dd4e699a358bc",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_portable_navigation_acceptance_20260906.py",
+      "bytes": 38221,
+      "source_sha256": "c9078a4a5b6e6df001e023dffbbb6972fc77dbbafcca5d05cfd3be6f51cfeef1",
+      "public_sha256": "f1c3fd47d281038248ee6f50979c86d0b94a5a13353185b279379f304654beaf",
+      "local_path_redacted": true
+    },
+    {
+      "path": "tests/test_portable_navigation_contract_v1.py",
+      "bytes": 34944,
+      "source_sha256": "755b3ad0804d026f45bcc82e4118c9cd370f9c0c0769ff8d91089ba8e1dbe7a0",
+      "public_sha256": "755b3ad0804d026f45bcc82e4118c9cd370f9c0c0769ff8d91089ba8e1dbe7a0",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_portable_navigation_core_v1.py",
+      "bytes": 40560,
+      "source_sha256": "c49cda0aa98e2e47819655fb9dd9c5cbf11ec77c449b438c8c2b46e1ca110de4",
+      "public_sha256": "c49cda0aa98e2e47819655fb9dd9c5cbf11ec77c449b438c8c2b46e1ca110de4",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_portable_navigation_release_races_20260907.py",
+      "bytes": 16154,
+      "source_sha256": "075a0d3eaba5fe8bfa767c63c782b913efdf357490ee14d2f7bffcc584dde72c",
+      "public_sha256": "075a0d3eaba5fe8bfa767c63c782b913efdf357490ee14d2f7bffcc584dde72c",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_replay_arrival_pose_epoch_fast_path_offline.py",
+      "bytes": 12273,
+      "source_sha256": "cf81338a9df8c3a75c410f0b03c198f6f141d68987bea226a1a6cf583f2b7755",
+      "public_sha256": "cf81338a9df8c3a75c410f0b03c198f6f141d68987bea226a1a6cf583f2b7755",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_direct_request_20260908.py",
+      "bytes": 9563,
+      "source_sha256": "fe559e47a6b634d5dc0b755cdc809daa314d6f9cb81763ff67fba45d77012ba7",
+      "public_sha256": "fe559e47a6b634d5dc0b755cdc809daa314d6f9cb81763ff67fba45d77012ba7",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_epoch_integration_20260906.py",
+      "bytes": 21162,
+      "source_sha256": "ca3ea76c89714f30288a8d462ecaa12749680d552d65cb6af79eca715648c208",
+      "public_sha256": "ca3ea76c89714f30288a8d462ecaa12749680d552d65cb6af79eca715648c208",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_exhibit_portable_policy_20260907.py",
+      "bytes": 8366,
+      "source_sha256": "edc3a29743b00f5a2d0136fa268e7c5d85e67712d9e71ba1a1f081a1961e5d5b",
+      "public_sha256": "edc3a29743b00f5a2d0136fa268e7c5d85e67712d9e71ba1a1f081a1961e5d5b",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_idle_admission_20260908.py",
+      "bytes": 3771,
+      "source_sha256": "d9deff8336dae5c45592e8e6ceefb962005a5f09810b3d3efa1ac3372b7bd2c4",
+      "public_sha256": "d9deff8336dae5c45592e8e6ceefb962005a5f09810b3d3efa1ac3372b7bd2c4",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_job_budget_20260906.py",
+      "bytes": 15440,
+      "source_sha256": "e716066681a19ec9e13c7f9cf980633816b2c8ffab03d5672dd68bc7e1e5be9e",
+      "public_sha256": "e716066681a19ec9e13c7f9cf980633816b2c8ffab03d5672dd68bc7e1e5be9e",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_label_normalization_20260906.py",
+      "bytes": 11881,
+      "source_sha256": "4e8946c1907fd1c354d811c5a718b52f450db057a8cefb8e5b75bcd7eceb1ceb",
+      "public_sha256": "4e8946c1907fd1c354d811c5a718b52f450db057a8cefb8e5b75bcd7eceb1ceb",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_navigation.py",
+      "bytes": 19451,
+      "source_sha256": "762afee8338f424fa0ecb81b2bf605cf8c02b9c2cc37361928237f3476fbaf19",
+      "public_sha256": "762afee8338f424fa0ecb81b2bf605cf8c02b9c2cc37361928237f3476fbaf19",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_navigation_api_20260906.py",
+      "bytes": 11233,
+      "source_sha256": "9b9f8498db1fd380c1d87fb1878922424ca419a44d3ee6fb0c4644ef8d70f052",
+      "public_sha256": "9b9f8498db1fd380c1d87fb1878922424ca419a44d3ee6fb0c4644ef8d70f052",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_navigation_arrival_fast_path_integration_20260907.py",
+      "bytes": 38231,
+      "source_sha256": "940a42b71881c9f6c0de8a80af71085866b7591b6f56806762fa11a17ea22b2a",
+      "public_sha256": "940a42b71881c9f6c0de8a80af71085866b7591b6f56806762fa11a17ea22b2a",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_navigation_arrival_revalidation_20260907.py",
+      "bytes": 76856,
+      "source_sha256": "e8196eccef8ca76b42a77e0bbd39075a2fb0e62ae8f277f61d703954a35bddd9",
+      "public_sha256": "e8196eccef8ca76b42a77e0bbd39075a2fb0e62ae8f277f61d703954a35bddd9",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_navigation_portable_v1.py",
+      "bytes": 36832,
+      "source_sha256": "f42412fb08b364d04e1062a2b901851c68d6de4d46e0c368d3646d5195d39331",
+      "public_sha256": "f42412fb08b364d04e1062a2b901851c68d6de4d46e0c368d3646d5195d39331",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_navigation_wake_20260906.py",
+      "bytes": 17755,
+      "source_sha256": "1953d23ed9f5f490275cb788eb5bfc41e4d7372756d66b5034f8b8a9494afefa",
+      "public_sha256": "1953d23ed9f5f490275cb788eb5bfc41e4d7372756d66b5034f8b8a9494afefa",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_perception_20260906.py",
+      "bytes": 33673,
+      "source_sha256": "3d9caa84913c3a3714cdd4e4b2112bce620737375eb99a5f7bf8caf708c348d7",
+      "public_sha256": "3d9caa84913c3a3714cdd4e4b2112bce620737375eb99a5f7bf8caf708c348d7",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_perception_open_vocab_20260907.py",
+      "bytes": 26198,
+      "source_sha256": "3722a5d5dbe0530ac518b2cba110ec0d91eecd60fd705eb80f75f9972e17812d",
+      "public_sha256": "3722a5d5dbe0530ac518b2cba110ec0d91eecd60fd705eb80f75f9972e17812d",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_phase.py",
+      "bytes": 24695,
+      "source_sha256": "b40d999279427b93b24bbed603c7f28796878df008073bbe28e1d8588abfff18",
+      "public_sha256": "b40d999279427b93b24bbed603c7f28796878df008073bbe28e1d8588abfff18",
+      "local_path_redacted": false
+    },
+    {
+      "path": "tests/test_visual_resource_budget.py",
+      "bytes": 4558,
+      "source_sha256": "89ad7d40c7e1a445c4a6b83e5672f0a0b8d1127b32048b5aa7fc1fbe4c4b87f3",
+      "public_sha256": "89ad7d40c7e1a445c4a6b83e5672f0a0b8d1127b32048b5aa7fc1fbe4c4b87f3",
+      "local_path_redacted": false
+    }
+  ]
+}
